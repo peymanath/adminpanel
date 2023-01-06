@@ -1,0 +1,15 @@
+{
+  "name": "admin-panel",
+  "version": "1.0.0",
+  "description": "admin panel",
+  "main": "index.js",
+  "scripts": {
+    "tw": "tailwindcss -i ../public/css/tailwindcss.css -o ../public/css/style.css",
+    "tw-watch": "tailwindcss -i ../public/css/tailwindcss.css -o ../public/css/style.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  }
+}
