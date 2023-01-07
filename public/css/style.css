@@ -644,6 +644,14 @@ input:focus-visible,
   margin-left: -2.5rem;
 }
 
+.mt-5{
+  margin-top: 1.25rem;
+}
+
+.mt-3{
+  margin-top: 0.75rem;
+}
+
 .block{
   display: block;
 }
@@ -868,6 +876,11 @@ input:focus-visible,
 .py-16{
   padding-top: 4rem;
   padding-bottom: 4rem;
+}
+
+.px-4{
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .pr-4{
