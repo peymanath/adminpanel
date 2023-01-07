@@ -23,6 +23,7 @@ module.exports = {
         headerborder: '#C4C4C4',
         input: '#CED4DA',
         'c-red': '#DC3545',
+        'c-green': '#28A745',
       }
     },
   },

@@ -61,11 +61,12 @@
                 <rect width="6" height="13" x="32" y="18" stroke-linecap="round" stroke-linejoin="round" rx="3"></rect>
             </g>
         </symbol>
+
     </svg>
 
     <section>
         <!-- Header Section -->
-        <header class="shadow-md">
+        <header class="bg-white border-b border-slate-200 opacity-40 shadow-md">
             <div class="flex items-center justify-between py-3 px-4">
                 <div class="btn-menu flex flex-wrap gap-x-5">
                     <div class="flex bg-[#F2F4F6] text-[#616262] border border-input p-2 rounded-md cursor-pointer">
@@ -138,201 +139,227 @@
         </aside>
 
         <!-- main Sections -->
-        <main class="flex-1 w-full md:w-8/12 lg:w-4/6 py-4 px-5">
-            <div class="flex flex-col gap-y-4">
+        <main class="flex-1  w-full md:w-8/12 lg:w-4/6 ">
 
-                <!-- Product Meta Form -->
+            <header class="flex flex-wrap gap-4 items-center justify-between bg-white py-2 px-4 text-xs md:text-sm lg:text">
+                <div>
+                    <span>به‌روزرسانی:</span>
+                    <time>1401/10/17</ف>
+                </div>
                 <div class="flex flex-col gap-y-3">
-
-                    <!-- Product Title -->
-                    <div class="flex flex-col gap-y-2">
-                        <label for="product-title">عنوان محصول</label>
-                        <input id="product-title" type="text" value="" placeholder="محصول شماره یک"
-                            class="bg-white border border-input rounded-md py-1.5 px-2">
+                    <div class="flex flex-wrap gap-x-2 justify-end">
+                        <button
+                            class="text-white bg-c-red border border-c-red rounded-md py-2 px-4 duration-300 hover:bg-white hover:text-c-red">پیش
+                            نویس</button>
+                        <button
+                            class="text-c-green border border-c-green rounded-md py-2 px-4 duration-300 hover:bg-c-green hover:text-white">تایید
+                            و انتشار</button>
                     </div>
-
-                    <!-- Product Category -->
-                    <div class="flex flex-col gap-y-2">
-                        <label for="product-category">انتخاب دسته بندی</label>
-                        <select id="product-category" type="text"
-                            class="form-select appearance-none block w-full text-base font-normal bg-white border border-input rounded-md py-1.5 px-2 focus:ring-primary">
-                            <option value="id-1">اجتماعی</option>
-                            <option value="id-2">معنوی</option>
-                            <option value="id-3">اقتصادی</option>
-                            <option value="id-4">خبر جدید</option>
-                            <option value="id-">تکنولوژی</option>
-                        </select>
-                    </div>
-
-                    <!-- Product Brand -->
-                    <div class="flex flex-col gap-y-2">
-                        <label for="product-brand">انتخاب برند</label>
-                        <select id="product-brand" type="text"
-                            class="form-select appearance-none block w-full text-base font-normal bg-white border border-input rounded-md py-1.5 px-2 focus:ring-primary">
-                            <option value="id-1">گوگل</option>
-                            <option value="id-2">بایننس</option>
-                            <option value="id-3">مایکروسافت</option>
-                            <option value="id-4">ری اکت</option>
-                            <option value="id-">نکست</option>
-                        </select>
-                    </div>
-
-                    <!-- Product Weight -->
-                    <div class="flex flex-col gap-y-2">
-                        <label for="product-wieght">وزن (گرم)</label>
-                        <input id="product-wieght" type="text" value="" placeholder="2000"
-                            class="bg-white border border-input rounded-md py-1.5 px-2">
-                    </div>
-
-                    <!-- Product Tags -->
-                    <div class="flex flex-col gap-y-2">
-                        <label for="product-stock">موجودی انبار</label>
-                        <input id="product-stock" type="text" value="" placeholder="10، 30، 40"
-                            class="bg-white border border-input rounded-md py-1.5 px-2">
-                    </div>
-
-                    <!-- Product Tags -->
-                    <div class="flex flex-col gap-y-2">
-                        <label for="product-tag">برچسب ها</label>
-                        <input type="hidden" name="TagList" id="TagList" value="">
-                        <div
-                            class=" flex flex-wrap items-center gap-x-2 bg-white border border-input rounded-md py-1.5 px-2">
-                            <tags class="listTagsJs flex flex-wrap items-center gap-3 w-full">
-                                <span class="flex-1 min-w-[80px]">
-                                    <form class="addTagJs w-full" action="">
-                                        <input type="text" value="" placeholder="افزودن برچسب جدید"
-                                            class="w-full inputTagJS">
-                                    </form>
-                                </span>
-                            </tags>
-                        </div>
-                    </div>
-
-                    <!-- Product ID -->
-                    <div class="flex flex-col gap-y-2">
-                        <label for="product-ID">شناسه کالا</label>
-                        <input id="product-ID" type="text" value="" placeholder="افزودن شناسه کالا"
-                            class="bg-white border border-input rounded-md py-1.5 px-2">
-                    </div>
-
-                    <!-- Product return of goods -->
-                    <div class="flex gap-x-5 mt-3">
-                        <label for="product-return">بازگشت کالا</label>
-                        <input id="product-return"
-                            class="input-circle appearance-none w-10 rounded-full h-5 bg-slate-200 bg-no-repeat bg-left focus:outline-none cursor-pointer shadow-sm checked:bg-primary checked:bg-right duration-300"
-                            type="checkbox">
-                    </div>
-
                 </div>
+            </header>
 
-                <div class="bg-white border-input rounded-md p-4">
-                    <div class="flex gap-x-2 text-base items-center border-b border-b-slate-300 pb-2 text-gray">
-                        <svg class="w-8 h-8">
-                            <use xlink:href="#cdelivery"></use>
-                        </svg>
-                        <span class="font-bold">تنظیمات حمل و نقل</span>
-                    </div>
-                    <div class="flex flex-col gap-y-4">
-                        <div class="flex justify-between pt-4">
-                            <label for="product-free-send">حمل و نقل رایگان</label>
-                            <input id="product-free-send"
+            <div class="flex flex-col lg:flex-row gap-4 lg:gap-10 p-5">
+
+                <div class="flex flex-col w-full lg:w-1/2 gap-y-4">
+
+                    <!-- Product Meta Form -->
+                    <div class="flex flex-col gap-y-3">
+
+                        <!-- Product Title -->
+                        <div class="flex flex-col gap-y-2">
+                            <label for="product-title">عنوان محصول</label>
+                            <input id="product-title" type="text" value="" placeholder="محصول شماره یک"
+                                class="bg-white border border-input rounded-md py-1.5 px-2">
+                        </div>
+
+                        <!-- Product Category -->
+                        <div class="flex flex-col gap-y-2">
+                            <label for="product-category">انتخاب دسته بندی</label>
+                            <select id="product-category" type="text"
+                                class="form-select appearance-none block w-full text-base font-normal bg-white border border-input rounded-md py-1.5 px-2 focus:ring-primary">
+                                <option value="id-1">اجتماعی</option>
+                                <option value="id-2">معنوی</option>
+                                <option value="id-3">اقتصادی</option>
+                                <option value="id-4">خبر جدید</option>
+                                <option value="id-">تکنولوژی</option>
+                            </select>
+                        </div>
+
+                        <!-- Product Brand -->
+                        <div class="flex flex-col gap-y-2">
+                            <label for="product-brand">انتخاب برند</label>
+                            <select id="product-brand" type="text"
+                                class="form-select appearance-none block w-full text-base font-normal bg-white border border-input rounded-md py-1.5 px-2 focus:ring-primary">
+                                <option value="id-1">گوگل</option>
+                                <option value="id-2">بایننس</option>
+                                <option value="id-3">مایکروسافت</option>
+                                <option value="id-4">ری اکت</option>
+                                <option value="id-">نکست</option>
+                            </select>
+                        </div>
+
+                        <!-- Product Weight -->
+                        <div class="flex flex-col gap-y-2">
+                            <label for="product-wieght">وزن (گرم)</label>
+                            <input id="product-wieght" type="text" value="" placeholder="2000"
+                                class="bg-white border border-input rounded-md py-1.5 px-2">
+                        </div>
+
+                        <!-- Product Tags -->
+                        <div class="flex flex-col gap-y-2">
+                            <label for="product-stock">موجودی انبار</label>
+                            <input id="product-stock" type="text" value="" placeholder="10، 30، 40"
+                                class="bg-white border border-input rounded-md py-1.5 px-2">
+                        </div>
+
+                        <!-- Product Tags -->
+                        <div class="flex flex-col gap-y-2">
+                            <label for="product-tag">برچسب ها</label>
+                            <input type="hidden" name="TagList" id="TagList" value="">
+                            <div
+                                class=" flex flex-wrap items-center gap-x-2 bg-white border border-input rounded-md py-1.5 px-2">
+                                <tags class="listTagsJs flex flex-wrap items-center gap-3 w-full">
+                                    <span class="flex-1 min-w-[80px]">
+                                        <form class="addTagJs w-full" action="">
+                                            <input type="text" value="" placeholder="افزودن برچسب جدید"
+                                                class="w-full inputTagJS">
+                                        </form>
+                                    </span>
+                                </tags>
+                            </div>
+                        </div>
+
+                        <!-- Product ID -->
+                        <div class="flex flex-col gap-y-2">
+                            <label for="product-ID">شناسه کالا</label>
+                            <input id="product-ID" type="text" value="" placeholder="افزودن شناسه کالا"
+                                class="bg-white border border-input rounded-md py-1.5 px-2">
+                        </div>
+
+                        <!-- Product return of goods -->
+                        <div class="flex gap-x-5 mt-3">
+                            <label for="product-return">بازگشت کالا</label>
+                            <input id="product-return"
                                 class="input-circle appearance-none w-10 rounded-full h-5 bg-slate-200 bg-no-repeat bg-left focus:outline-none cursor-pointer shadow-sm checked:bg-primary checked:bg-right duration-300"
                                 type="checkbox">
                         </div>
-                        <div class="flex justify-between pt-2">
-                            <label for="product-fixed-fare">کرایه ثابت</label>
-                            <input id="product-fixed-fare"
-                                class="input-circle appearance-none w-10 rounded-full h-5 bg-slate-200 bg-no-repeat bg-left focus:outline-none cursor-pointer shadow-sm checked:bg-primary checked:bg-right duration-300"
-                                type="checkbox">
+
+                    </div>
+
+                    <div class="bg-white border-input rounded-md p-4">
+                        <div class="flex gap-x-2 text-base items-center border-b border-b-slate-300 pb-2 text-gray">
+                            <svg class="w-8 h-8">
+                                <use xlink:href="#cdelivery"></use>
+                            </svg>
+                            <span class="font-bold">تنظیمات حمل و نقل</span>
                         </div>
-                        <div class="productTransportationFee">
-                            <div class="flex flex-col gap-y-2 border border-slate-300 rounded-md p-4">
-                                <label for="product-transportation-fee">هزینه حمل و نقل</label>
-                                <input id="product-transportation-fee" type="text" value="" placeholder="30000"
-                                    class="bg-white border border-input rounded-md py-1.5 px-2">
+                        <div class="flex flex-col gap-y-4">
+                            <div class="flex justify-between pt-4">
+                                <label for="product-free-send">حمل و نقل رایگان</label>
+                                <input id="product-free-send"
+                                    class="input-circle appearance-none w-10 rounded-full h-5 bg-slate-200 bg-no-repeat bg-left focus:outline-none cursor-pointer shadow-sm checked:bg-primary checked:bg-right duration-300"
+                                    type="checkbox">
+                            </div>
+                            <div class="flex justify-between pt-2">
+                                <label for="product-fixed-fare">کرایه ثابت</label>
+                                <input id="product-fixed-fare"
+                                    class="input-circle appearance-none w-10 rounded-full h-5 bg-slate-200 bg-no-repeat bg-left focus:outline-none cursor-pointer shadow-sm checked:bg-primary checked:bg-right duration-300"
+                                    type="checkbox">
+                            </div>
+                            <div class="productTransportationFee">
+                                <div class="flex flex-col gap-y-2 border border-slate-300 rounded-md p-4">
+                                    <label for="product-transportation-fee">هزینه حمل و نقل</label>
+                                    <input id="product-transportation-fee" type="text" value="" placeholder="30000"
+                                        class="bg-white border border-input rounded-md py-1.5 px-2">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="bg-white border-input rounded-md p-4">
-                    <div class="flex gap-x-2 text-base items-center border-b border-b-slate-300 pb-2 text-gray">
-                        <svg class="w-8 h-8">
-                            <use xlink:href="#warning"></use>
-                        </svg>
-                        <span class="font-bold">اخطار کم بودن موجودی</span>
-                    </div>
-                    <div class="flex flex-col gap-y-4 pt-4">
-                        <div class="productTransportationFee">
-                            <div class="flex flex-col gap-y-2 rounded-md">
-                                <label for="product-transportation-fee">تعداد</label>
-                                <input id="product-transportation-fee" type="text" value="" placeholder="5"
-                                    class="bg-white border border-input rounded-md py-1.5 px-2">
+                    <div class="bg-white border-input rounded-md p-4">
+                        <div class="flex gap-x-2 text-base items-center border-b border-b-slate-300 pb-2 text-gray">
+                            <svg class="w-8 h-8">
+                                <use xlink:href="#warning"></use>
+                            </svg>
+                            <span class="font-bold">اخطار کم بودن موجودی</span>
+                        </div>
+                        <div class="flex flex-col gap-y-4 pt-4">
+                            <div class="productTransportationFee">
+                                <div class="flex flex-col gap-y-2 rounded-md">
+                                    <label for="product-transportation-fee">تعداد</label>
+                                    <input id="product-transportation-fee" type="text" value="" placeholder="5"
+                                        class="bg-white border border-input rounded-md py-1.5 px-2">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="bg-white border-input rounded-md p-4">
-                    <div class="flex gap-x-2 text-base items-center border-b border-b-slate-300 pb-2 text-gray">
-                        <svg class="w-8 h-8">
-                            <use xlink:href="#video"></use>
-                        </svg>
-                        <span class="font-bold">ویدیو محصول</span>
+                    <div class="bg-white border-input rounded-md p-4">
+                        <div class="flex gap-x-2 text-base items-center border-b border-b-slate-300 pb-2 text-gray">
+                            <svg class="w-8 h-8">
+                                <use xlink:href="#video"></use>
+                            </svg>
+                            <span class="font-bold">ویدیو محصول</span>
+                        </div>
+                        <div class="flex flex-col gap-y-4 pt-4">
+                            <div class="productTransportationFee">
+                                <div class="flex flex-col gap-y-2 rounded-md ">
+                                    <label for="product-transportation-fee">لینک ویدیو</label>
+                                    <input id="product-transportation-fee" type="text" value=""
+                                        placeholder="https://taftaco.ir/video/...."
+                                        class="bg-white border border-input rounded-md py-1.5 px-2 text-left"
+                                        style="direction: ltr;">
+                                    <span class="pb-4 mt-4 text-slate-500">
+                                        لینک یوتیوب یا ویمو.آپارات و یا انواع پرونده های خاص مانند MP4 ، WebM ، ogv را
+                                        وارد
+                                        کنید.
+                                    </span>
+                                    <div class="flex flex-wrap gap-x-2 justify-end">
+                                        <button
+                                            class="text-c-green border border-c-green rounded-md py-2 px-4 duration-300 hover:bg-c-green hover:text-white">آپلود
+                                            ویدیو</button>
+
+                                        <button
+                                            class="text-white bg-c-red border border-c-red rounded-md py-2 px-4 duration-300 hover:bg-white hover:text-c-red">انتخاب
+                                            ویدیو</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex flex-col gap-y-4 pt-4">
-                        <div class="productTransportationFee">
-                            <div class="flex flex-col gap-y-2 rounded-md ">
-                                <label for="product-transportation-fee">لینک ویدیو</label>
-                                <input id="product-transportation-fee" type="text" value=""
-                                    placeholder="https://taftaco.ir/video/...."
-                                    class="bg-white border border-input rounded-md py-1.5 px-2 text-left"
-                                    style="direction: ltr;">
-                                <span class="pb-4 mt-4 text-slate-500">
-                                    لینک یوتیوب یا ویمو.آپارات و یا انواع پرونده های خاص مانند MP4 ، WebM ، ogv را وارد
-                                    کنید.
-                                </span>
-                                <div class="flex flex-wrap gap-x-2 justify-end">
-                                    <button
-                                        class="text-primary border border-primary rounded-md py-2 px-4 duration-300 hover:bg-primary hover:text-white">آپلود
-                                        ویدیو</button>
 
-                                    <button
-                                        class="text-white bg-c-red border border-c-red rounded-md py-2 px-4 duration-300 hover:bg-white hover:text-c-red">انتخاب
-                                        ویدیو</button>
+                    <div class="bg-white border-input rounded-md p-4">
+                        <div class="flex gap-x-2 text-base items-center border-b border-b-slate-300 pb-2 text-gray">
+                            <svg class="w-8 h-8">
+                                <use xlink:href="#seo"></use>
+                            </svg>
+                            <span class="font-bold">اطلاعات سئو</span>
+                        </div>
+                        <div class="flex flex-col gap-y-4 pt-4">
+                            <div class="productTransportationFee">
+                                <div class="flex flex-col gap-y-2 rounded-md pb-4">
+                                    <label for="product-transportation-fee">تگ عنوان | < title></label>
+                                    <input id="product-transportation-fee" type="text" value=""
+                                        placeholder="بهترین محصولات الکترونیکی سال 2023"
+                                        class="bg-white border border-input rounded-md py-1.5 px-2">
+                                </div>
+                                <div class="flex flex-col gap-y-2 rounded-md pb-4">
+                                    <label for="product-transportation-fee">متا توضیحات | < meta></label>
+                                    <input id="product-transportation-fee" type="text" value=""
+                                        placeholder="خرید محصولات الکترونیکی ...."
+                                        class="bg-white border border-input rounded-md py-1.5 px-2">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white border-input rounded-md p-4">
-                    <div class="flex gap-x-2 text-base items-center border-b border-b-slate-300 pb-2 text-gray">
-                        <svg class="w-8 h-8">
-                            <use xlink:href="#seo"></use>
-                        </svg>
-                        <span class="font-bold">اطلاعات سئو</span>
-                    </div>
-                    <div class="flex flex-col gap-y-4 pt-4">
-                        <div class="productTransportationFee">
-                            <div class="flex flex-col gap-y-2 rounded-md pb-4">
-                                <label for="product-transportation-fee">تگ عنوان | < title ></label>
-                                <input id="product-transportation-fee" type="text" value="" placeholder="بهترین محصولات الکترونیکی سال 2023"
-                                    class="bg-white border border-input rounded-md py-1.5 px-2">
-                            </div>
-                            <div class="flex flex-col gap-y-2 rounded-md pb-4">
-                                <label for="product-transportation-fee">متا توضیحات | < meta ></label>
-                                <input id="product-transportation-fee" type="text" value="" placeholder="خرید محصولات الکترونیکی ...."
-                                    class="bg-white border border-input rounded-md py-1.5 px-2">
-                            </div>
-                        </div>
-                    </div>
+                <div class="flex flex-col w-full lg:w-1/2 gap-y-4">
+
+    
                 </div>
             </div>
 
-            <div>
-
-            </div>
         </main>
     </section>
 
