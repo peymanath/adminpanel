@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/css/style.css">
+
+    <!-- Date Picker -->
+    <script type="text/javascript" src="../public/js/date/jalaliDate.js"></script>
 </head>
 
 <body class="bg-[#F4F6F9]">
@@ -422,9 +425,10 @@
                                     class="bg-white border border-input rounded-md py-1.5 px-2">
                             </div>
                             <div class="flex flex-col gap-y-2 rounded-md">
-                                <label for="product-stock-seller">تاریخ انقضا تخفیف</label>
-                                <input id="product-stock-seller" type="text" placeholder="1403/10/17"
-                                    class="bg-white border border-input rounded-md py-1.5 px-2">
+                                <label for="product-offer-price-seller-date">تاریخ انقضا تخفیف</label>
+                                <input id="product-offer-price-seller-date" type="text" placeholder="1403/10/17"
+                                    class="bg-white border border-input rounded-md py-1.5 px-2"
+                                    onchange="$persianCalendar.$_manualInput(this)" onclick="$persianCalendar.$openCalendar('product-offer-price-seller-date', this);">
                             </div>
                         </div>
                     </div>
@@ -438,7 +442,7 @@
                         </div>
                         <div class="flex flex-col gap-y-4 pt-4">
 
-                            
+
                             <div class="flex flex-col gap-y-2">
                                 <label for="product-brand">انتخاب رنگ</label>
                                 <select id="product-brand" type="text"
@@ -478,7 +482,8 @@
                                 </select>
                             </div>
 
-                            <span class="text-slate-500 text-xs md:text-sm lg:text">ویژگی های این محصول را انتخاب کنید و سپس مقادیر ورودی هر ویژگی را وارد کنید</span>
+                            <span class="text-slate-500 text-xs md:text-sm lg:text">ویژگی های این محصول را انتخاب کنید و
+                                سپس مقادیر ورودی هر ویژگی را وارد کنید</span>
                         </div>
 
 
