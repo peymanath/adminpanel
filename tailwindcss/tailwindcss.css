@@ -3,3 +3,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    .sidebarMenu.active {
+        width: 50px;
+    }
+
+    .sidebarMenu.active ul  {
+        padding-right: 12px;
+    }
+
+    .sidebarMenu.active ul li .textMenu {
+        display: none;
+    }
+}

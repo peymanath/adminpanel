@@ -17,8 +17,14 @@
                 fill="currentColor" />
         </symbol>
         <symbol id="bars" viewBox="0 0 24 24">
-            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
                 d="M4 6h16M4 12h16M4 18h16"></path>
+        </symbol>
+        <symbol id="product" viewBox="0 0 48 48">
+            <g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2.5">
+                <path d="M44 14L24 4L4 14v20l20 10l20-10V14Z"></path>
+                <path stroke-linecap="round" d="m4 14l20 10m0 20V24m20-10L24 24M34 9L14 19"></path>
+            </g>
         </symbol>
     </svg>
 
@@ -26,7 +32,7 @@
         <!-- Header Section -->
         <header class="shadow-md">
             <div class="container flex items-center justify-between py-3">
-                <div class="flex flex-wrap gap-x-5">
+                <div class="btnMenu flex flex-wrap gap-x-5">
                     <div class="flex bg-[#F2F4F6] text-[#616262] border border-input p-2 rounded-md cursor-pointer">
                         <svg class="w-5 h-5">
                             <use xlink:href="#bars"></use>
@@ -59,17 +65,57 @@
         </header>
     </section>
 
-    <section>
+    <section class="flex gap-4 h-full">
         <!-- sidebar Tablet & Desktop -->
-        <aside>
-
+        <aside class="sidebarMenu active hidden md:flex bg-gray text-white">
+            <ul class="py-4 px-5 pl-8">
+                <li class="pb-5">
+                    <a href="" class="flex flex-wrap items-center gap-x-2">
+                        <svg class="w-6 h-6">
+                            <use xlink:href="#product"></use>
+                        </svg>
+                        <span class="textMenu">
+                            افزودن محصولات جدید
+                        </span>
+                    </a>
+                </li>
+                <li class="pb-5">
+                    <a href="" class="flex flex-wrap items-center gap-x-2">
+                        <svg class="w-6 h-6">
+                            <use xlink:href="#product"></use>
+                        </svg>
+                        <span class="textMenu">
+                            محصولات در حال تولید
+                        </span>
+                    </a>
+                </li>
+                <li class="pb-5">
+                    <a href="" class="flex flex-wrap items-center gap-x-2">
+                        <svg class="w-6 h-6">
+                            <use xlink:href="#product"></use>
+                        </svg>
+                        <span class="textMenu">
+                            محصولات جدید در انبار
+                        </span>
+                    </a>
+                </li>
+            </ul>
         </aside>
 
         <!-- main Sections -->
-        <main>
-
+        <main class="w-full md:w-4/6 lg:w-5/6">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem qui molestiae, veritatis ab nostrum eius
+            dolorum non dicta odio totam illum magni minima possimus, inventore ex saepe officia recusandae soluta.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem qui molestiae, veritatis ab nostrum eius
+            dolorum non dicta odio totam illum magni minima possimus, inventore ex saepe officia recusandae soluta.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem qui molestiae, veritatis ab nostrum eius
+            dolorum non dicta odio totam illum magni minima possimus, inventore ex saepe officia recusandae soluta.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem qui molestiae, veritatis ab nostrum eius
+            dolorum non dicta odio totam illum magni minima possimus, inventore ex saepe officia recusandae soluta.
         </main>
     </section>
+
+    <script src="../public/js/script.js"></script>
 </body>
 
 </html>
