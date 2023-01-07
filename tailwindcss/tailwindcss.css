@@ -15,6 +15,12 @@
         @apply flex items-center gap-x-2 bg-slate-100 py-1 px-2 rounded-md
     }
 
+    .input-circle {
+        background-position: 100%;
+        background-image: url(../images/circle.svg);
+
+    }
+
     .sidebar-menu.active {
         width: 50px;
     }
