@@ -22,6 +22,7 @@ module.exports = {
         primary: '#76EE59',
         headerborder: '#C4C4C4',
         input: '#CED4DA',
+        'c-red': '#DC3545',
       }
     },
   },
