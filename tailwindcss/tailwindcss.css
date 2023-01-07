@@ -7,8 +7,13 @@
 @layer base {
 
     input,
-    select {
+    select,
+    textarea {
         @apply focus:outline-none focus-visible:outline-none focus:placeholder:text-transparent;
+    }
+
+    textarea {
+        @apply resize-none;
     }
 
     .TagClass {
