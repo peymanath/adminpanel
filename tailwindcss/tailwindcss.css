@@ -5,15 +5,32 @@
 @tailwind utilities;
 
 @layer base {
-    .sidebarMenu.active {
+
+    input,
+    select {
+        @apply focus:outline-none focus-visible:outline-none focus:placeholder:text-transparent;
+    }
+
+    .TagClass {
+        @apply flex items-center gap-x-2 bg-slate-100 py-1 px-2 rounded-md
+    }
+
+    .sidebar-menu.active {
         width: 50px;
     }
 
-    .sidebarMenu.active ul  {
+    .sidebar-menu.active ul {
         padding-right: 12px;
     }
 
-    .sidebarMenu.active ul li .textMenu {
+    .sidebar-menu.active ul li .text-menu {
         display: none;
+    }
+
+    .form-select {
+        background-image: url(https://api.iconify.design/ion:arrow-down-b.svg);
+        background-position: left 0.75rem center;
+        background-size: 16px 12px;
+        background-repeat: no-repeat;
     }
 }

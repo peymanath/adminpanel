@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../public/css/style.css">
 </head>
 
-<body>
+<body class="bg-[#F4F6F9]">
     <svg width="0" height="0" xmlns="http://www.w3.org/2000/svg" class="hidden invisible">
         <symbol id="search" viewBox="0 0 16 16" fill="none">
             <path
@@ -26,13 +26,19 @@
                 <path stroke-linecap="round" d="m4 14l20 10m0 20V24m20-10L24 24M34 9L14 19"></path>
             </g>
         </symbol>
+
+        <symbol id="times" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M17.414 6.586a2 2 0 0 0-2.828 0L12 9.172L9.414 6.586a2 2 0 1 0-2.828 2.828L9.171 12l-2.585 2.586a2 2 0 1 0 2.828 2.828L12 14.828l2.586 2.586c.39.391.902.586 1.414.586s1.024-.195 1.414-.586a2 2 0 0 0 0-2.828L14.829 12l2.585-2.586a2 2 0 0 0 0-2.828z">
+            </path>
+        </symbol>
     </svg>
 
     <section>
         <!-- Header Section -->
         <header class="shadow-md">
             <div class="container flex items-center justify-between py-3">
-                <div class="btnMenu flex flex-wrap gap-x-5">
+                <div class="btn-menu flex flex-wrap gap-x-5">
                     <div class="flex bg-[#F2F4F6] text-[#616262] border border-input p-2 rounded-md cursor-pointer">
                         <svg class="w-5 h-5">
                             <use xlink:href="#bars"></use>
@@ -48,7 +54,7 @@
                     <form action=""
                         class="hidden sm:flex relative bg-[#F2F4F6] py-1.5 rounded-md border border-input text-[#616262]">
                         <input type="text" name="search" value="" placeholder="جستجو"
-                            class="bg-transparent w-full h-full focus:outline-none focus-visible:outline-none focus:placeholder:text-transparent ml-7 pr-4">
+                            class="bg-transparent w-full h-full ml-7 pr-4">
                         <button class="absolute top-1/2 -translate-y-1/2 left-2 ">
                             <svg class="w-5 h-5">
                                 <use xlink:href="#search"></use>
@@ -65,16 +71,16 @@
         </header>
     </section>
 
-    <section class="flex gap-4 h-full">
+    <section class="flex h-full">
         <!-- sidebar Tablet & Desktop -->
-        <aside class="sidebarMenu active hidden md:flex bg-gray text-white">
+        <aside class="sidebar-menu hidden md:flex bg-gray text-white">
             <ul class="py-4 px-5 pl-8">
                 <li class="pb-5">
                     <a href="" class="flex flex-wrap items-center gap-x-2">
                         <svg class="w-6 h-6">
                             <use xlink:href="#product"></use>
                         </svg>
-                        <span class="textMenu">
+                        <span class="text-menu">
                             افزودن محصولات جدید
                         </span>
                     </a>
@@ -84,7 +90,7 @@
                         <svg class="w-6 h-6">
                             <use xlink:href="#product"></use>
                         </svg>
-                        <span class="textMenu">
+                        <span class="text-menu">
                             محصولات در حال تولید
                         </span>
                     </a>
@@ -94,7 +100,7 @@
                         <svg class="w-6 h-6">
                             <use xlink:href="#product"></use>
                         </svg>
-                        <span class="textMenu">
+                        <span class="text-menu">
                             محصولات جدید در انبار
                         </span>
                     </a>
@@ -103,19 +109,87 @@
         </aside>
 
         <!-- main Sections -->
-        <main class="w-full md:w-4/6 lg:w-5/6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem qui molestiae, veritatis ab nostrum eius
-            dolorum non dicta odio totam illum magni minima possimus, inventore ex saepe officia recusandae soluta.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem qui molestiae, veritatis ab nostrum eius
-            dolorum non dicta odio totam illum magni minima possimus, inventore ex saepe officia recusandae soluta.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem qui molestiae, veritatis ab nostrum eius
-            dolorum non dicta odio totam illum magni minima possimus, inventore ex saepe officia recusandae soluta.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem qui molestiae, veritatis ab nostrum eius
-            dolorum non dicta odio totam illum magni minima possimus, inventore ex saepe officia recusandae soluta.
+        <main class="w-full md:w-8/12 lg:w-4/6 py-4 px-5">
+            <div>
+                <div class="flex flex-col gap-y-3">
+                    <div class="flex flex-col gap-y-2">
+                        <label for="product-title">عنوان محصول</label>
+                        <input id="product-title" type="text" value="" placeholder="محصول شماره یک"
+                            class="bg-white border border-input rounded-md py-1.5 px-2">
+                    </div>
+                    <div class="flex flex-col gap-y-2">
+                        <label for="product-category">انتخاب دسته بندی</label>
+                        <select id="product-category" type="text"
+                            class="form-select appearance-none block w-full text-base font-normal bg-white border border-input rounded-md py-1.5 px-2 focus:ring-primary">
+                            <option value="id-1">اجتماعی</option>
+                            <option value="id-2">معنوی</option>
+                            <option value="id-3">اقتصادی</option>
+                            <option value="id-4">خبر جدید</option>
+                            <option value="id-">تکنولوژی</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col gap-y-2">
+                        <label for="product-brand">انتخاب برند</label>
+                        <select id="product-brand" type="text"
+                            class="form-select appearance-none block w-full text-base font-normal bg-white border border-input rounded-md py-1.5 px-2 focus:ring-primary">
+                            <option value="id-1">گوگل</option>
+                            <option value="id-2">بایننس</option>
+                            <option value="id-3">مایکروسافت</option>
+                            <option value="id-4">ری اکت</option>
+                            <option value="id-">نکست</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col gap-y-2">
+                        <label for="product-wieght">وزن (گرم)</label>
+                        <input id="product-wieght" type="text" value="" placeholder="2000"
+                            class="bg-white border border-input rounded-md py-1.5 px-2">
+                    </div>
+                    <div class="flex flex-col gap-y-2">
+                        <label for="product-tag">برچسب ها</label>
+                        <input type="hidden" name="TagList" id="TagList" value="">
+                        <div
+                            class=" flex flex-wrap items-center gap-x-2 bg-white border border-input rounded-md py-1.5 px-2">
+                            <tags class="listTagsJs flex flex-wrap items-center gap-3 w-full">
+                                <span class="flex-1 min-w-[80px]">
+                                    <form class="addTagJs w-full" action="">
+                                        <input type="text" value="" placeholder="تگ جدید" class="w-full inputTagJS">
+                                    </form>
+                                </span>
+                            </tags>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-y-2">
+                        <label for="product-title">عنوان محصول</label>
+                        <input id="product-title" type="text" value="" placeholder="محصول شماره یک"
+                            class="bg-white border border-input rounded-md py-1.5 px-2">
+                    </div>
+                    <div class="flex flex-col gap-y-2">
+                        <label for="product-title">عنوان محصول</label>
+                        <input id="product-title" type="text" value="" placeholder="محصول شماره یک"
+                            class="bg-white border border-input rounded-md py-1.5 px-2">
+                    </div>
+                    <div class="flex flex-col gap-y-2">
+                        <label for="product-title">عنوان محصول</label>
+                        <input id="product-title" type="text" value="" placeholder="محصول شماره یک"
+                            class="bg-white border border-input rounded-md py-1.5 px-2">
+                    </div>
+                </div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, atque alias tempora blanditiis
+                architecto tenetur dignissimos quas assumenda eaque, nam debitis, incidunt error? Consequatur, ratione
+                in sequi est commodi quas.
+            </div>
         </main>
     </section>
 
     <script src="../public/js/script.js"></script>
+    <script src="../public/js/tagInput.js"></script>
+
 </body>
 
 </html>
