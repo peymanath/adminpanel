@@ -1,68 +1,109 @@
+/**
+ * Author: Peyman Nader
+ * Author ULR: https://github.com/peymanath
+ * Description: TagInput For TailwindCss
+ */
+
 
 const addNewTag = (event) => {
 
-    event.preventDefault();
+    // Disabled Page Refresh
+    event.preventDefault()
 
-    const inputTag = $('.inputTagJS');
-    let value = []
-    
-    if (!inputTag.value.trim().length) return
+    // Select Input[class="inputTagJS"]
+    const inputTag = $('.inputTagJS')
+
+    // make Array Var for Output Tag List
+    let outputValueTagInput = []
+
+
+    // Add new tag to product-Tag
+    if (!inputTag.value.trim().length)
+
+        // It warns if the input is empty
+        alert("لطفا در فیلد برچسب ها مقداری را وارد کنید.")
+
     else {
-        const addTagJsParent = $('.addTagJs').parentElement;
-        addTagJsParent.remove();
 
+        // Select data Form
+        const addTagJsParent = $('.addTagJs').parentElement
+
+        // Remove form after add the new tag
+        addTagJsParent.remove()
+
+        // make element <Tag></Tag>
         const newTag = d.createElement('Tag')
 
-        newTag.classList.add('TagClass');
-        newTag.setAttribute('value', inputTag.value);
+        // Add class Element <Tag></Tag>
+        newTag.classList.add('TagClass')
 
+        // Add Attribute Element <Tag></Tag>
+        newTag.setAttribute('value', inputTag.value)
+
+        // Add item to Element <Tag></Tag>
         newTag.innerHTML =
             `<svg class="w-5 h-5">
              <use xlink:href="#times" class="removeTagJs cursor-pointer"></use>
              </svg>
              <div class="">
              <span>${inputTag.value}</span>
-             </div>`;
+             </div>`
 
+        // Add Element & Form to "<Tags></Tags>"
         $('.listTagsJs').append(newTag, addTagJsParent)
 
-        inputTag.value = "";
+        // Reset Input
+        inputTag.value = ""
+
+        // Focus input
         inputTag.focus();
 
     }
 
 
+    // add tags to input[id="TagList"]
     if ($('.listTagsJs tag').length > 1) {
-        
+
         let items = [...$('.listTagsJs tag')];
         items.forEach(e => {
-            value.push(e.attributes[1].textContent);
+            outputValueTagInput.push(e.attributes[1].textContent);
         });
-    } 
-    else value = $('.listTagsJs tag').attributes[1].textContent;
+    }
+    else outputValueTagInput = $('.listTagsJs tag').attributes[1].textContent;
 
-    $('#TagList').value = value;
+    // Change Value input[id="TagList"]
+    $('#TagList').value = outputValueTagInput;
 
 }
 
+// Remove <Tags></Tags>
 const reamoveTag = item => {
 
-    const classList = [...item.target.classList];
-    
+    // Make array for tag list
+    const classList = [...item.target.classList]
+
+    // Checks the button after it is clicked
     if (classList.find(e => e == "removeTagJs")) {
-        
-        const ValueHidden = $('#TagList').value.split(',');
-        const removaItemValue = item.target.parentElement.parentElement.attributes[1].textContent;
 
-        const selectTag =  ValueHidden.filter(item => item !== removaItemValue);
+        // select parent item
+        const parentItem = item.target.parentElement.parentElement;
 
-        $('#TagList').value = selectTag;
-        
-        item.target.parentElement.parentElement.remove();
+        // Remove item to <tag></tag>
+        parentItem.remove()
 
+        // Receive item on input[id="TagList"]
+        const tagListOnInputHidden = $('#TagList').value.split(',')
+
+        // Receive item List "<Tags></Tags>"
+        const removaItemValue = parentItem.attributes[1].textContent
+
+        // Remove After Filter
+        $('#TagList').value = tagListOnInputHidden.filter(item => item !== removaItemValue)
     }
 }
 
-// Event List
+// Perform event after form submission
 $('.addTagJs').addEventListener('submit', addNewTag)
+
+// Perform event after icon[remove] clicked
 $('.listTagsJs').addEventListener('click', reamoveTag)
