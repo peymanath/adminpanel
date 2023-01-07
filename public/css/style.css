@@ -594,6 +594,14 @@ input:focus-visible,
   left: 0.5rem;
 }
 
+.float-left{
+  float: left;
+}
+
+.m-auto{
+  margin: auto;
+}
+
 .ml-7{
   margin-left: 1.75rem;
 }
@@ -608,6 +616,10 @@ input:focus-visible,
 
 .block{
   display: block;
+}
+
+.inline{
+  display: inline;
 }
 
 .flex{
@@ -638,6 +650,22 @@ input:focus-visible,
   height: 2rem;
 }
 
+.h-1{
+  height: 0.25rem;
+}
+
+.h-24{
+  height: 6rem;
+}
+
+.h-44{
+  height: 11rem;
+}
+
+.h-32{
+  height: 8rem;
+}
+
 .w-5{
   width: 1.25rem;
 }
@@ -660,6 +688,18 @@ input:focus-visible,
 
 .w-8{
   width: 2rem;
+}
+
+.w-24{
+  width: 6rem;
+}
+
+.w-44{
+  width: 11rem;
+}
+
+.w-32{
+  width: 8rem;
 }
 
 .min-w-\[80px\]{
@@ -703,6 +743,10 @@ input:focus-visible,
 
 .justify-end{
   justify-content: flex-end;
+}
+
+.justify-center{
+  justify-content: center;
 }
 
 .justify-between{
@@ -751,8 +795,32 @@ input:focus-visible,
   border-width: 1px;
 }
 
+.border-2{
+  border-width: 2px;
+}
+
+.border-4{
+  border-width: 4px;
+}
+
+.border-\[4px\]{
+  border-width: 4px;
+}
+
+.border-\[33px\]{
+  border-width: 33px;
+}
+
+.border-\[3px\]{
+  border-width: 3px;
+}
+
 .border-b{
   border-bottom-width: 1px;
+}
+
+.border-dotted{
+  border-style: dotted;
 }
 
 .border-input{
@@ -788,6 +856,35 @@ input:focus-visible,
 .border-slate-200{
   --tw-border-opacity: 1;
   border-color: rgb(226 232 240 / var(--tw-border-opacity));
+}
+
+.border-\[4\]{
+  border-color: 4;
+}
+
+.border-\[\]{
+  border-color: ;
+}
+
+.border-\[\#c\]{
+  border-color: #c;
+}
+
+.border-\[\#c7c7c7\]{
+  --tw-border-opacity: 1;
+  border-color: rgb(199 199 199 / var(--tw-border-opacity));
+}
+
+.border-\[\#c7c7c789\]{
+  border-color: #c7c7c789;
+}
+
+.border-\[\#a1a1a189\]{
+  border-color: #a1a1a189;
+}
+
+.border-\[\#a1a1a13e\]{
+  border-color: #a1a1a13e;
 }
 
 .border-b-slate-300{
@@ -904,6 +1001,11 @@ input:focus-visible,
   padding-bottom: 4rem;
 }
 
+.py-7{
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
+
 .pr-4{
   padding-right: 1rem;
 }
@@ -982,6 +1084,21 @@ input:focus-visible,
 .text-c-green{
   --tw-text-opacity: 1;
   color: rgb(40 167 69 / var(--tw-text-opacity));
+}
+
+.text-slate-400{
+  --tw-text-opacity: 1;
+  color: rgb(148 163 184 / var(--tw-text-opacity));
+}
+
+.text-slate-200{
+  --tw-text-opacity: 1;
+  color: rgb(226 232 240 / var(--tw-text-opacity));
+}
+
+.text-input{
+  --tw-text-opacity: 1;
+  color: rgb(206 212 218 / var(--tw-text-opacity));
 }
 
 .opacity-40{
