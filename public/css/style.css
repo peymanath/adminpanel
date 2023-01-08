@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap);
 
 /*
 ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com
@@ -421,6 +421,23 @@ video {
   display: none;
 }
 
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #25282b49;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #25282ba4;
+}
+
 input:focus,
     select:focus,
     textarea:focus{
@@ -617,10 +634,6 @@ textarea{
   margin-top: 1rem;
 }
 
-.block{
-  display: block;
-}
-
 .flex{
   display: flex;
 }
@@ -694,10 +707,6 @@ textarea{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.transform{
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .cursor-pointer{
   cursor: pointer;
 }
@@ -736,6 +745,10 @@ textarea{
   gap: 1rem;
 }
 
+.gap-1{
+  gap: 0.25rem;
+}
+
 .gap-3{
   gap: 0.75rem;
 }
@@ -750,8 +763,8 @@ textarea{
        column-gap: 0.5rem;
 }
 
-.gap-y-3{
-  row-gap: 0.75rem;
+.gap-y-6{
+  row-gap: 1.5rem;
 }
 
 .gap-y-4{
@@ -924,11 +937,6 @@ textarea{
   padding-bottom: 1.75rem;
 }
 
-.py-16{
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
 .pr-4{
   padding-right: 1rem;
 }
@@ -939,6 +947,10 @@ textarea{
 
 .pb-5{
   padding-bottom: 1.25rem;
+}
+
+.pr-1{
+  padding-right: 0.25rem;
 }
 
 .pb-2{
@@ -966,17 +978,22 @@ textarea{
   line-height: 1rem;
 }
 
+.text-sm{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .text-base{
   font-size: 1rem;
   line-height: 1.5rem;
 }
 
-.font-normal{
-  font-weight: 400;
-}
-
 .font-bold{
   font-weight: 700;
+}
+
+.leading-6{
+  line-height: 1.5rem;
 }
 
 .text-\[\#616262\]{
@@ -1015,9 +1032,9 @@ textarea{
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow-sm{
-  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+.shadow{
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -1042,6 +1059,12 @@ textarea{
 
 .checked\:bg-right:checked{
   background-position: right;
+}
+
+.checked\:shadow-md:checked{
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .hover\:bg-\[\#283543\]:hover{
@@ -1069,16 +1092,6 @@ textarea{
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.focus\:outline-none:focus{
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
-.focus\:ring-primary:focus{
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(118 238 89 / var(--tw-ring-opacity));
-}
-
 @media (min-width: 640px){
   .sm\:flex{
     display: flex;
@@ -1086,6 +1099,22 @@ textarea{
 
   .sm\:hidden{
     display: none;
+  }
+
+  .sm\:w-auto{
+    width: auto;
+  }
+
+  .sm\:flex-wrap{
+    flex-wrap: wrap;
+  }
+
+  .sm\:justify-between{
+    justify-content: space-between;
+  }
+
+  .sm\:gap-1{
+    gap: 0.25rem;
   }
 
   .sm\:gap-x-2{

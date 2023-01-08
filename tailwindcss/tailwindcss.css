@@ -1,10 +1,27 @@
-@import url(https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap);
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+
+    ::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #25282b49;
+        border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #25282ba4;
+    }
 
     input,
     select,
