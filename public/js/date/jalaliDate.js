@@ -237,6 +237,7 @@ $persianCalendar = {
 	 * @author Sandro Alves Peres
 	 * 
 	 */
+	
 	$getPosX : function(object) {
 		var current_left = 0;
 
@@ -248,6 +249,7 @@ $persianCalendar = {
 		}
 		return current_left;
 	},
+
 	$getPosY : function(object) {
 		var current_top = 0;
 
