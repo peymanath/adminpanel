@@ -41,7 +41,7 @@ const addNewTag = (event) => {
         newTag.setAttribute('value', inputTag.value)
 
         // Add item to Element <Tag></Tag>
-        newTag.innerHTML = `<svg class="w-5 h-5"><use xlink:href="#times" class="removeTagJs cursor-pointer"></use></svg><span>${inputTag.value}</span>`
+        newTag.innerHTML = `<svg class="w-5 h-5 text-red-600"><use xlink:href="#times" class="removeTagJs cursor-pointer"></use></svg><span>${inputTag.value}</span>`
 
         // Add Element & Form to "<Tags></Tags>"
         $('.listTagsJs').append(newTag, addTagJsParent)
