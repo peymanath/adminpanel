@@ -1,9 +1,17 @@
-const d = document;
-const $ = (q) => (d.querySelectorAll(q).length > 1)
-    ? d.querySelectorAll(q) : d.querySelector(q);
+/**
+ * Author: Peyman Nader
+ * Author ULR: https://github.com/peymanath
+ * Description: TagInput For TailwindCss
+ */
 
-$('.btn-menu').addEventListener('click', (e) => $('.sidebar-menu').classList.toggle('active'));
+// Select doucument
+const d = document
 
-$('#product-fixed-fare').addEventListener('click', (e) => {
-    $('.productTransportationFee').classList.toggle('hidden');
-});
+// select element
+const $ = q => (d.querySelectorAll(q).length > 1) ? d.querySelectorAll(q) : d.querySelector(q)
+
+// Toggle click Menu Btn
+$('.btn-menu').addEventListener('click', () => $('.sidebar-menu').classList.toggle('active'))
+
+// product Transportation Fee toggle btn
+$('#product-fixed-fare').addEventListener('click', () => $('.productTransportationFee').classList.toggle('hidden'))
