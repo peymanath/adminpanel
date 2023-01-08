@@ -94,7 +94,24 @@ class PersianDate {
 
     newDate(Options) {
 
-        this.createElements;
+        // this.createElements;
+
+        if (window.addEventListener) { // Mozilla, Chrome and Others
+            window.addEventListener("load", () => this.createElements, false);
+            window.addEventListener("mousedown", () => this.onDeativate(), false);
+        } else if (window.attachEvent) { // IE
+            window.attachEvent("onload", () => this.closeCalendar);
+            document.attachEvent("onmousedown", () => {
+                this.onDeativate(event);
+            });
+        } else {
+            window.onload = () => {
+                this.createElements;
+            };
+            window.onmousedown = () => {
+                this.onDeativate(event);
+            };
+        }
 
         const checkInput = _$.getElementById(this.buttonID) ? true : false;
 
@@ -384,7 +401,7 @@ class PersianDate {
 
     openCalendar(ID_OBJECT = this.inputID, OBJECT = document.getElementById(this.buttonID)) {
 
-        this.closeCalendar();
+        this.closeCalendar;
 
         document.getElementById("MYCALENDAR_HDACTIVE_ELEMENT").value = ID_OBJECT;
         var __Month, __Year;
@@ -421,7 +438,7 @@ class PersianDate {
         this.listDays(__Month, __Year);
     }
 
-    closeCalendar() {
+    get closeCalendar() {
         document.getElementById("MYCALENDAR_DIV_BACK").style.display = "none";
         document.getElementById("MYCALENDAR_DIV_BACK").style.visibility = "hidden";
     }
@@ -596,7 +613,7 @@ class PersianDate {
                 }
             }
             if (_deativate) {
-                // thiscloseCalendar()
+                this.closeCalendar
             }
         }
     }
@@ -628,7 +645,7 @@ class fixDate extends PersianDate {
             }
         }
 
-        this.closeCalendar();
+        this.closeCalendar;
     }
 }
 
