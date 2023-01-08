@@ -65,6 +65,15 @@ class PersianDate {
      */
     base = "../public/js/date/view/";
 
+    /**
+     * Input ID to insert the date
+     */
+    inputID = "PersianDate"
+
+    /**
+     * Buttun id for show for the calendar
+     */
+    buttonID = "PersianDateButton"
 
     /**
      * function that will be evaluated after the last step of selecting a date
@@ -83,6 +92,24 @@ class PersianDate {
      */
     mountCounter = [0, 31, 62, 93, 124, 155, 186, 216, 246, 276, 306, 336];
 
+    newDate(Options) {
+
+        this.createElements;
+
+        const checkInput = _$.getElementById(this.buttonID) ? true : false;
+
+        (checkInput) ? this.buttonID : this.buttonID = Options.buttonID ? Options.buttonID : this.inputID
+
+        this.inputID = Options.inputID ? Options.inputID : this.inputID;
+
+        _$.getElementById(this.buttonID).addEventListener('click', () => {
+            this.openCalendar()
+        })
+
+        _$.getElementById(this.inputID).addEventListener('change', () => {
+            this.manualInput()
+        })
+    }
 
     /**
      * Create the calendar skeleton for the first time
@@ -355,7 +382,8 @@ class PersianDate {
         return (yearStartDay + dayOfYear) % 7;
     }
 
-    openCalendar(ID_OBJECT, OBJECT) {
+    openCalendar(ID_OBJECT = this.inputID, OBJECT = document.getElementById(this.buttonID)) {
+
         this.closeCalendar();
 
         document.getElementById("MYCALENDAR_HDACTIVE_ELEMENT").value = ID_OBJECT;
@@ -539,7 +567,8 @@ class PersianDate {
         this.listDays(currMonth, (currYear + op));
     }
 
-    manualInput(ID_OBJECT ) {
+    manualInput(ID_OBJECT = this.inputID) {
+
         document.getElementById("MYCALENDAR_HDACTIVE_ELEMENT").value = ID_OBJECT;
         var validDate = this.isDate(ID_OBJECT);
         if (!validDate) {
@@ -612,24 +641,4 @@ class ChangeYear extends PersianDate {
         document.getElementById("MYCALENDAR_HDYEAR").value = (currYear + op);
         this.listDays(currMonth, (currYear + op));
     }
-}
-
-
-const perDate = new PersianDate();
-
-if (window.addEventListener) { // Mozilla, Chrome and Others
-    window.addEventListener("load", perDate.createElements, false);
-    window.addEventListener("mousedown", perDate.onDeativate, false);
-} else if (window.attachEvent) { // IE
-    window.attachEvent("onload", perDate.createElements);
-    document.attachEvent("onmousedown", function () {
-        perDate.onDeativate(event);
-    });
-} else {
-    window.onload = function () {
-        perDate.createElements();
-    };
-    window.onmousedown = function () {
-        perDate.onDeativate(event);
-    };
 }
