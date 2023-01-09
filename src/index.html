@@ -151,7 +151,7 @@
 
         <!-- Mobile Menu -->
         <div class="ShowMenuMobile bg-gray text-white fixed w-full h-full hidden z-50 md:hidden">
-           
+
             <!-- Header Section -->
             <header class="bg-primary border-b border-[#a1a1a13e]">
 
@@ -749,6 +749,15 @@
     <script src="../public/js/script.js"></script>
     <!-- tag input library -->
     <script src="../library/tag-input/tagInput.js"></script>
+    <!-- tinymce library -->
+    <script src="../library/tinymce/tinymce.min.js"></script>
+
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            language: 'fa'
+        });
+    </script>
 
 </body>
 
