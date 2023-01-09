@@ -1,11 +1,13 @@
-const _$ = document;
-const _s = q => (_$.querySelectorAll(q).length > 1) ? _$.querySelectorAll(q) : _$.querySelector(q);
-
 /**
  * Author: Peyman Nader
  * Author ULR: https://github.com/peymanath
  * Description: Jalali Date
  */
+
+const _$ = document;
+const _s = q => (_$.querySelectorAll(q).length > 1) ? _$.querySelectorAll(q) : _$.querySelector(q);
+const _sID = q => _$.getElementById(q);
+
 
 class PersianDate {
     /**
@@ -42,22 +44,11 @@ class PersianDate {
      * array of numbers in Farsi typeface.
      */
     parsi = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
+    
     /**
      * array containing the name of months
      */
     monthNames = ["فروردین", "اردیبهشت", "خرداد", "تیر", "امرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"];
-
-    /**
-     * list of holidays in year format: [ Month, Day, Title ]
-     */
-    holidays = [
-        [1, 1, "نوروز"],
-        [1, 2, "نوروز"],
-        [1, 3, "نوروز"],
-        [1, 4, "نوروز"],
-        [1, 13, "سیزده بدر"],
-        [12, 29, "روز ملی نفت"]
-    ];
 
     /**
      * directory containing css and gif files for this class DO NOT FORGET the
@@ -92,38 +83,25 @@ class PersianDate {
      */
     mountCounter = [0, 31, 62, 93, 124, 155, 186, 216, 246, 276, 306, 336];
 
-    newDate(Options) {
-
-        // this.createElements;
+    newDate(Options = {}) {
 
         if (window.addEventListener) { // Mozilla, Chrome and Others
             window.addEventListener("load", () => this.createElements, false);
             window.addEventListener("mousedown", () => this.onDeativate(), false);
-        } else if (window.attachEvent) { // IE
-            window.attachEvent("onload", () => this.closeCalendar);
-            document.attachEvent("onmousedown", () => {
-                this.onDeativate(event);
-            });
-        } else {
-            window.onload = () => {
-                this.createElements;
-            };
-            window.onmousedown = () => {
-                this.onDeativate(event);
-            };
         }
 
-        const checkInput = _$.getElementById(this.buttonID) ? true : false;
-
-        (checkInput) ? this.buttonID : this.buttonID = Options.buttonID ? Options.buttonID : this.inputID
+        const checkInput = _sID(this.buttonID) ? true : false;
 
         this.inputID = Options.inputID ? Options.inputID : this.inputID;
 
-        _$.getElementById(this.buttonID).addEventListener('click', () => {
+        this.buttonID = (checkInput) ? this.buttonID :  Options.buttonID ? Options.buttonID : this.inputID
+
+
+        _sID(this.buttonID).addEventListener('click', () => {
             this.openCalendar()
         })
 
-        _$.getElementById(this.inputID).addEventListener('change', () => {
+        _sID(this.inputID).addEventListener('change', () => {
             this.manualInput()
         })
     }
@@ -132,10 +110,6 @@ class PersianDate {
      * Create the calendar skeleton for the first time
      */
     get createElements() {
-        /**
-         * Add stylesheet to <head> tag
-         */
-        _s("head").innerHTML = _s("head").innerHTML + `<link href="${this.base}persian_calendar.css" rel="stylesheet" type="text/css">`;
         /**
          * 
          */
@@ -152,7 +126,7 @@ class PersianDate {
         tb.rows[0].insertCell(2);
         tb.rows[0].className = "MYCALENDAR_LINE_TOP";
 
-        const ImgDown = document.createElement("img");
+        const ImgDown = _$.createElement("img");
         ImgDown.setAttribute("src", this.base + "prev_month.gif");
         ImgDown.setAttribute("border", "0");
         ImgDown.setAttribute("title", this.prevMonth);
@@ -169,7 +143,7 @@ class PersianDate {
         tb.rows[0].cells[1].setAttribute("align", "center");
         tb.rows[0].cells[1].setAttribute("vAlign", "middle");
 
-        const ImgUp = document.createElement("img");
+        const ImgUp = _$.createElement("img");
         ImgUp.setAttribute("src", this.base + "next_month.gif");
         ImgUp.setAttribute("border", "0");
         ImgUp.setAttribute("title", this.nextMonth);
@@ -221,27 +195,27 @@ class PersianDate {
             + this.nextYear + "\" />";
         tb.rows[8].cells[0].innerHTML = _Bottom;
 
-        let hdActiveElement = document.createElement("input");
+        let hdActiveElement = _$.createElement("input");
         hdActiveElement.setAttribute("name", "MYCALENDAR_HDACTIVE_ELEMENT");
         hdActiveElement.setAttribute("id", "MYCALENDAR_HDACTIVE_ELEMENT");
         hdActiveElement.setAttribute("type", "hidden");
 
-        let hdYear = document.createElement("input");
+        let hdYear = _$.createElement("input");
         hdYear.setAttribute("name", "MYCALENDAR_HDYEAR");
         hdYear.setAttribute("id", "MYCALENDAR_HDYEAR");
         hdYear.setAttribute("type", "hidden");
 
-        let hdMonth = document.createElement("input");
+        let hdMonth = _$.createElement("input");
         hdMonth.setAttribute("name", "MYCALENDAR_HDMONTH");
         hdMonth.setAttribute("id", "MYCALENDAR_HDMONTH");
         hdMonth.setAttribute("type", "hidden");
 
         divBack.appendChild(tb);
 
-        document.body.appendChild(hdActiveElement);
-        document.body.appendChild(hdYear);
-        document.body.appendChild(hdMonth);
-        document.body.appendChild(divBack);
+        _$.body.appendChild(hdActiveElement);
+        _$.body.appendChild(hdYear);
+        _$.body.appendChild(hdMonth);
+        _$.body.appendChild(divBack);
     }
 
     getPosX(object) {
@@ -312,8 +286,7 @@ class PersianDate {
         timeStamp = this.zone(timeStamp);
         var Day = Math.floor(timeStamp / 86400);
         Day += 287;
-        var Year = Math.floor((Day / this.KhayamYear)
-            - (Day * this.CorrectingKhayamYear));
+        var Year = Math.floor((Day / this.KhayamYear) - (Day * this.CorrectingKhayamYear));
         var dayOfYear = Day - Math.round(Year * this.KhayamYear);
         if (dayOfYear == 0)
             dayOfYear = 366;
@@ -343,7 +316,7 @@ class PersianDate {
 
     isDate(ID_OBJECT) {
         var arr_date = [];
-        var objValue = new String(document.getElementById(ID_OBJECT).value);
+        var objValue = new String(_sID(ID_OBJECT).value);
         arr_date = objValue.split("/");
         var returning = false;
         objValue = "";
@@ -368,15 +341,13 @@ class PersianDate {
                                 month: Month,
                                 day: Day
                             };
-                            objValue = Year + '/'
-                                + this.zeroPad(Month, 2) + '/'
-                                + this.zeroPad(Day, 2);
+                            objValue = Year + '/' + Month + '/' + Day;
                         }
                     }
                 }
             }
         }
-        document.getElementById(ID_OBJECT).value = objValue;
+        _sID(ID_OBJECT).value = objValue;
         return returning;
     }
 
@@ -399,11 +370,11 @@ class PersianDate {
         return (yearStartDay + dayOfYear) % 7;
     }
 
-    openCalendar(ID_OBJECT = this.inputID, OBJECT = document.getElementById(this.buttonID)) {
+    openCalendar(ID_OBJECT = this.inputID, OBJECT = _sID(this.buttonID)) {
 
         this.closeCalendar;
 
-        document.getElementById("MYCALENDAR_HDACTIVE_ELEMENT").value = ID_OBJECT;
+        _sID("MYCALENDAR_HDACTIVE_ELEMENT").value = ID_OBJECT;
         var __Month, __Year;
         var validDate = this.isDate(ID_OBJECT);
         if (!validDate) {
@@ -412,16 +383,16 @@ class PersianDate {
         __Month = validDate.month;
         __Year = validDate.year;
 
-        document.getElementById("MYCALENDAR_HDYEAR").value = __Year;
-        document.getElementById("MYCALENDAR_HDMONTH").value = __Month;
+        _sID("MYCALENDAR_HDYEAR").value = __Year;
+        _sID("MYCALENDAR_HDMONTH").value = __Month;
 
-        document.getElementById("MYCALENDAR_DIV_BACK").style.display = "block";
+        _sID("MYCALENDAR_DIV_BACK").style.display = "block";
 
-        var _WTB = document.getElementById("MYCALENDAR_MAIN_TB").offsetWidth;
-        var _HTB = document.getElementById("MYCALENDAR_MAIN_TB").offsetHeight;
-        document.getElementById("MYCALENDAR_DIV_BACK").style.width = _WTB
+        var _WTB = _sID("MYCALENDAR_MAIN_TB").offsetWidth;
+        var _HTB = _sID("MYCALENDAR_MAIN_TB").offsetHeight;
+        _sID("MYCALENDAR_DIV_BACK").style.width = _WTB
             + "px";
-        document.getElementById("MYCALENDAR_DIV_BACK").style.height = _HTB
+        _sID("MYCALENDAR_DIV_BACK").style.height = _HTB
             + "px";
         var x = (this.getPosX(OBJECT) - _WTB + OBJECT.offsetWidth);
         var y = (this.getPosY(OBJECT) + OBJECT.offsetHeight + 3);
@@ -432,15 +403,15 @@ class PersianDate {
             y += 14;
         }
 
-        document.getElementById("MYCALENDAR_DIV_BACK").style.left = x + "px";
-        document.getElementById("MYCALENDAR_DIV_BACK").style.top = y + "px";
-        document.getElementById("MYCALENDAR_DIV_BACK").style.visibility = "visible";
+        _sID("MYCALENDAR_DIV_BACK").style.left = x + "px";
+        _sID("MYCALENDAR_DIV_BACK").style.top = y + "px";
+        _sID("MYCALENDAR_DIV_BACK").style.visibility = "visible";
         this.listDays(__Month, __Year);
     }
 
     get closeCalendar() {
-        document.getElementById("MYCALENDAR_DIV_BACK").style.display = "none";
-        document.getElementById("MYCALENDAR_DIV_BACK").style.visibility = "hidden";
+        _sID("MYCALENDAR_DIV_BACK").style.display = "none";
+        _sID("MYCALENDAR_DIV_BACK").style.visibility = "hidden";
     }
 
     daysOfMonth(month, year) {
@@ -461,7 +432,7 @@ class PersianDate {
     }
 
     listDays(month, year) {
-        var tb = document.getElementById("MYCALENDAR_MAIN_TB");
+        var tb = _sID("MYCALENDAR_MAIN_TB");
 
         var validDate = this.mktime();
         var currentDay = validDate.day;
@@ -475,7 +446,6 @@ class PersianDate {
         var incDay = 0;
         var _$L = "";
         var _$R = "";
-        var _strHoliday = new String();
 
         for (var i = 2; i < 8; i++) {
             for (var j = 0; j < 7; j++) {
@@ -487,19 +457,8 @@ class PersianDate {
                         && year == currentYear) { // current day
                         showClass = "MYCALENDAR_NUMBER_CURRENT_DAY";
                     }
-
-                    _strHoliday = "";
-                    for (var k in this.holidays) {
-                        if (this.holidays[k][1] == (incDay + 1)
-                            && this.holidays[k][0] == month) {
-                            showClass = "MYCALENDAR_NUMBER_HOLIDAY";
-                            _strHoliday = " title=\""
-                                + this.holidays[k][2] + "\"";
-                            break;
-                        }
-                    }
                     _$L = "<a href=\"javascript:void(0)\" onclick=\"new fixDate().start(this)\" class=\""
-                        + showClass + "\"" + _strHoliday + ">";
+                        + showClass + "\">";
                     _$R = "</a>";
 
                     tb.rows[i].cells[j].innerHTML = _$L
@@ -507,16 +466,15 @@ class PersianDate {
                 }
             }
         }
-        var tmpYear = this.zeroPad(year, 4);
-        tmpYear = this.ParsiNumber(tmpYear);
-        document.getElementById("MYCALENDAR_SPAN_YEAR").innerHTML = tmpYear;
+        
+        let tmpYear = this.ParsiNumber(year);
+        _sID("MYCALENDAR_SPAN_YEAR").innerHTML = tmpYear;
         tb.rows[0].cells[1].innerHTML = this.getStrMonth(month);
     }
 
     writeTS(_year, _month, _day) {
-        var parObj = document.getElementById(document
-            .getElementById('MYCALENDAR_HDACTIVE_ELEMENT').value);
-        var hdTimeStamp = document.createElement("input");
+        var parObj = _sID(_sID('MYCALENDAR_HDACTIVE_ELEMENT').value);
+        var hdTimeStamp = _$.createElement("input");
         hdTimeStamp.setAttribute("name", parObj.id + "_TIMESTAMP");
         hdTimeStamp.setAttribute("id", parObj.id + "_TIMESTAMP");
         hdTimeStamp.setAttribute("type", "hidden");
@@ -547,28 +505,26 @@ class PersianDate {
     }
 
     changeMonth(op) {
-        var currYear = parseInt(
-            document.getElementById("MYCALENDAR_HDYEAR").value, 10);
-        var currMonth = parseInt(
-            document.getElementById("MYCALENDAR_HDMONTH").value, 10);
+        var currYear = parseInt( _sID("MYCALENDAR_HDYEAR").value, 10);
+        var currMonth = parseInt( _sID("MYCALENDAR_HDMONTH").value, 10);
 
         if (op == 1) { // up
             if (currMonth < 12) {
-                document.getElementById("MYCALENDAR_HDMONTH").value = (currMonth + 1);
+                _sID("MYCALENDAR_HDMONTH").value = (currMonth + 1);
                 this.listDays((currMonth + 1), currYear);
             } else {
-                document.getElementById("MYCALENDAR_HDMONTH").value = 1;
-                document.getElementById("MYCALENDAR_HDYEAR").value = ++currYear;
+                _sID("MYCALENDAR_HDMONTH").value = 1;
+                _sID("MYCALENDAR_HDYEAR").value = ++currYear;
                 this.listDays(1, currYear);
             }
         } else { // down
             if (currMonth > 1) {
-                document.getElementById("MYCALENDAR_HDMONTH").value = (currMonth - 1);
+                _sID("MYCALENDAR_HDMONTH").value = (currMonth - 1);
                 this.listDays((currMonth - 1), currYear);
             } else {
                 if ((currYear - 1) > 0) {
-                    document.getElementById("MYCALENDAR_HDMONTH").value = 12;
-                    document.getElementById("MYCALENDAR_HDYEAR").value = --currYear;
+                    _sID("MYCALENDAR_HDMONTH").value = 12;
+                    _sID("MYCALENDAR_HDYEAR").value = --currYear;
                     this.listDays(12, currYear);
                 }
             }
@@ -577,16 +533,15 @@ class PersianDate {
 
     changeYear(op) {
         var currYear = parseInt(
-            document.getElementById("MYCALENDAR_HDYEAR").value, 10);
-        var currMonth = parseInt(
-            document.getElementById("MYCALENDAR_HDMONTH").value, 10);
-        document.getElementById("MYCALENDAR_HDYEAR").value = (currYear + op);
+            _sID("MYCALENDAR_HDYEAR").value, 10);
+        var currMonth = parseInt(_sID("MYCALENDAR_HDMONTH").value, 10);
+        _sID("MYCALENDAR_HDYEAR").value = (currYear + op);
         this.listDays(currMonth, (currYear + op));
     }
 
     manualInput(ID_OBJECT = this.inputID) {
 
-        document.getElementById("MYCALENDAR_HDACTIVE_ELEMENT").value = ID_OBJECT;
+        _sID("MYCALENDAR_HDACTIVE_ELEMENT").value = ID_OBJECT;
         var validDate = this.isDate(ID_OBJECT);
         if (!validDate) {
             alert("Wrong format: 'YYYY/MM/DD'");
@@ -598,10 +553,10 @@ class PersianDate {
 
     onDeativate(ev) {
         ev = (ev ? ev : window.event);
-        var _target = (document.all ? ev.srcElement : ev.target);
+        var _target = (_$.all ? ev.srcElement : ev.target);
         var _deativate = true;
 
-        if (document.getElementById("MYCALENDAR_DIV_BACK").style.visibility == "visible") {
+        if (_sID("MYCALENDAR_DIV_BACK").style.visibility == "visible") {
             if (_target.parentNode != null) {
                 var _pNode = _target.parentNode;
                 while (_pNode != null) {
@@ -623,18 +578,14 @@ class fixDate extends PersianDate {
 
     start(OBJECT) {
 
-        var _day = this.ReverseNumber(OBJECT.innerHTML);
-        var _idElement = new String(document
-            .getElementById("MYCALENDAR_HDACTIVE_ELEMENT").value);
-        var _month = new String(
-            document.getElementById("MYCALENDAR_HDMONTH").value);
-        var _year = new String(
-            document.getElementById("MYCALENDAR_HDYEAR").value);
-        _day = new String(this.zeroPad(_day, 2));
-        _month = new String(this.zeroPad(_month, 2));
-        _year = new String(this.zeroPad(_year, 4));
-        document.getElementById(_idElement).value = _year.concat("/", _month,
-            "/", _day);
+        var _day = this.ParsiNumber(this.ReverseNumber(OBJECT.innerHTML));
+        var _idElement = new String(_sID("MYCALENDAR_HDACTIVE_ELEMENT").value);
+
+        var _month = this.ParsiNumber(new String(_sID("MYCALENDAR_HDMONTH").value));
+        
+        var _year = this.ParsiNumber(new String(_sID("MYCALENDAR_HDYEAR").value));
+
+        _sID(_idElement).value = _year.concat("/", _month, "/", _day);
 
         this.writeTS(_year, _month, _day);
 
@@ -644,7 +595,7 @@ class fixDate extends PersianDate {
             } catch (e) {
             }
         }
-
+        
         this.closeCalendar;
     }
 }
@@ -652,10 +603,10 @@ class fixDate extends PersianDate {
 class ChangeYear extends PersianDate {
     start(op) {
         var currYear = parseInt(
-            document.getElementById("MYCALENDAR_HDYEAR").value, 10);
+            _sID("MYCALENDAR_HDYEAR").value, 10);
         var currMonth = parseInt(
-            document.getElementById("MYCALENDAR_HDMONTH").value, 10);
-        document.getElementById("MYCALENDAR_HDYEAR").value = (currYear + op);
+            _sID("MYCALENDAR_HDMONTH").value, 10);
+        _sID("MYCALENDAR_HDYEAR").value = (currYear + op);
         this.listDays(currMonth, (currYear + op));
     }
 }

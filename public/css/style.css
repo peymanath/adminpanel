@@ -421,89 +421,6 @@ video {
   display: none;
 }
 
-::-webkit-scrollbar {
-  width: 7px;
-}
-
-::-webkit-scrollbar-track {
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #25282b49;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #25282ba4;
-}
-
-input:focus,
-    select:focus,
-    textarea:focus{
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
-input:focus::-moz-placeholder, select:focus::-moz-placeholder, textarea:focus::-moz-placeholder{
-  color: transparent;
-}
-
-input:focus::placeholder,
-    select:focus::placeholder,
-    textarea:focus::placeholder{
-  color: transparent;
-}
-
-input:focus-visible,
-    select:focus-visible,
-    textarea:focus-visible{
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
-textarea{
-  resize: none;
-}
-
-.TagClass{
-  display: flex;
-  align-items: center;
-  -moz-column-gap: 0.5rem;
-       column-gap: 0.5rem;
-  border-radius: 0.375rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
-.input-circle {
-  background-position: 100%;
-  background-image: url(../images/circle.svg);
-}
-
-.sidebar-menu.active {
-  width: 50px;
-}
-
-.sidebar-menu.active ul {
-  padding-right: 12px;
-}
-
-.sidebar-menu.active ul li .text-menu {
-  display: none;
-}
-
-.form-select {
-  background-image: url(https://api.iconify.design/ion:arrow-down-b.svg);
-  background-position: left 0.75rem center;
-  background-size: 16px 12px;
-  background-repeat: no-repeat;
-}
-
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -602,6 +519,10 @@ textarea{
   visibility: hidden;
 }
 
+.fixed{
+  position: fixed;
+}
+
 .absolute{
   position: absolute;
 }
@@ -616,6 +537,10 @@ textarea{
 
 .left-2{
   left: 0.5rem;
+}
+
+.z-50{
+  z-index: 50;
 }
 
 .float-left{
@@ -642,16 +567,12 @@ textarea{
   display: none;
 }
 
-.h-5{
-  height: 1.25rem;
-}
-
-.h-7{
-  height: 1.75rem;
-}
-
 .h-full{
   height: 100%;
+}
+
+.h-5{
+  height: 1.25rem;
 }
 
 .h-6{
@@ -666,16 +587,16 @@ textarea{
   height: 8rem;
 }
 
+.w-full{
+  width: 100%;
+}
+
 .w-5{
   width: 1.25rem;
 }
 
-.w-7{
-  width: 1.75rem;
-}
-
-.w-full{
-  width: 100%;
+.w-2\/3{
+  width: 66.666667%;
 }
 
 .w-6{
@@ -741,16 +662,16 @@ textarea{
   justify-content: space-between;
 }
 
+.gap-3{
+  gap: 0.75rem;
+}
+
 .gap-4{
   gap: 1rem;
 }
 
 .gap-1{
   gap: 0.25rem;
-}
-
-.gap-3{
-  gap: 0.75rem;
 }
 
 .gap-x-5{
@@ -763,6 +684,10 @@ textarea{
        column-gap: 0.5rem;
 }
 
+.gap-y-2{
+  row-gap: 0.5rem;
+}
+
 .gap-y-6{
   row-gap: 1.5rem;
 }
@@ -771,12 +696,12 @@ textarea{
   row-gap: 1rem;
 }
 
-.gap-y-2{
-  row-gap: 0.5rem;
-}
-
 .rounded-md{
   border-radius: 0.375rem;
+}
+
+.rounded-sm{
+  border-radius: 0.125rem;
 }
 
 .rounded-full{
@@ -785,6 +710,10 @@ textarea{
 
 .border{
   border-width: 1px;
+}
+
+.border-2{
+  border-width: 2px;
 }
 
 .border-\[3px\]{
@@ -805,7 +734,7 @@ textarea{
 
 .border-input{
   --tw-border-opacity: 1;
-  border-color: rgb(206 212 218 / var(--tw-border-opacity));
+  border-color: rgb(238 238 238 / var(--tw-border-opacity));
 }
 
 .border-c-red{
@@ -833,9 +762,14 @@ textarea{
   background-color: rgb(244 246 249 / var(--tw-bg-opacity));
 }
 
-.bg-white{
+.bg-gray{
   --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  background-color: rgb(31 45 61 / var(--tw-bg-opacity));
+}
+
+.bg-primary{
+  --tw-bg-opacity: 1;
+  background-color: rgb(118 238 89 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#F2F4F6\]{
@@ -843,13 +777,13 @@ textarea{
   background-color: rgb(242 244 246 / var(--tw-bg-opacity));
 }
 
-.bg-gray{
-  --tw-bg-opacity: 1;
-  background-color: rgb(31 45 61 / var(--tw-bg-opacity));
-}
-
 .bg-transparent{
   background-color: transparent;
+}
+
+.bg-white{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .bg-c-red{
@@ -872,6 +806,14 @@ textarea{
 
 .p-2{
   padding: 0.5rem;
+}
+
+.p-1\.5{
+  padding: 0.375rem;
+}
+
+.p-1{
+  padding: 0.25rem;
 }
 
 .p-5{
@@ -897,19 +839,14 @@ textarea{
   padding-bottom: 0.375rem;
 }
 
-.px-1\.5{
-  padding-left: 0.375rem;
-  padding-right: 0.375rem;
+.px-2{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .py-1{
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-}
-
-.px-1{
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
 }
 
 .py-4{
@@ -927,18 +864,9 @@ textarea{
   padding-bottom: 0.5rem;
 }
 
-.px-2{
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
 .py-7{
   padding-top: 1.75rem;
   padding-bottom: 1.75rem;
-}
-
-.pr-4{
-  padding-right: 1rem;
 }
 
 .pl-8{
@@ -947,6 +875,10 @@ textarea{
 
 .pb-5{
   padding-bottom: 1.25rem;
+}
+
+.pr-4{
+  padding-right: 1rem;
 }
 
 .pr-1{
@@ -973,14 +905,14 @@ textarea{
   text-align: left;
 }
 
-.text-xs{
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-
 .text-sm{
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-xs{
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .text-base{
@@ -996,14 +928,14 @@ textarea{
   line-height: 1.5rem;
 }
 
-.text-\[\#616262\]{
-  --tw-text-opacity: 1;
-  color: rgb(97 98 98 / var(--tw-text-opacity));
-}
-
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-\[\#616262\]{
+  --tw-text-opacity: 1;
+  color: rgb(97 98 98 / var(--tw-text-opacity));
 }
 
 .text-c-green{
@@ -1023,22 +955,12 @@ textarea{
 
 .text-input{
   --tw-text-opacity: 1;
-  color: rgb(206 212 218 / var(--tw-text-opacity));
-}
-
-.text-red-500{
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
+  color: rgb(238 238 238 / var(--tw-text-opacity));
 }
 
 .text-red-600{
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
-}
-
-.text-red-700{
-  --tw-text-opacity: 1;
-  color: rgb(185 28 28 / var(--tw-text-opacity));
 }
 
 .shadow-md{
@@ -1065,6 +987,99 @@ textarea{
 
 .duration-300{
   transition-duration: 300ms;
+}
+
+.tox-tinymce {
+  font-family: 'Vazirmatn' !important;
+}
+
+.tox-promotion,
+.tox-statusbar__branding{
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #25282b49;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #25282ba4;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+input:focus::-moz-placeholder, select:focus::-moz-placeholder, textarea:focus::-moz-placeholder{
+  color: transparent;
+}
+
+input:focus::placeholder,
+select:focus::placeholder,
+textarea:focus::placeholder{
+  color: transparent;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+textarea{
+  resize: none;
+}
+
+.TagClass{
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+  border-radius: 0.375rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.input-circle {
+  background-position: 100%;
+  background-image: url(../images/circle.svg);
+}
+
+.sidebar-menu.active {
+  width: 70px;
+}
+
+.sidebar-menu.active ul {
+  padding: 1rem 0px;
+}
+
+.sidebar-menu.active ul li .text-menu,
+.sidebar-menu.active .PanelBtnSidebar {
+  display: none;
+}
+
+.form-select {
+  background-image: url(https://api.iconify.design/ion:arrow-down-b.svg);
+  background-position: left 0.75rem center;
+  background-size: 16px 12px;
+  background-repeat: no-repeat;
 }
 
 .checked\:bg-primary:checked{
@@ -1112,10 +1127,6 @@ textarea{
     display: flex;
   }
 
-  .sm\:hidden{
-    display: none;
-  }
-
   .sm\:w-auto{
     width: auto;
   }
@@ -1131,20 +1142,6 @@ textarea{
   .sm\:gap-1{
     gap: 0.25rem;
   }
-
-  .sm\:gap-x-2{
-    -moz-column-gap: 0.5rem;
-         column-gap: 0.5rem;
-  }
-
-  .sm\:rounded-md{
-    border-radius: 0.375rem;
-  }
-
-  .sm\:px-4{
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
 }
 
 @media (min-width: 768px){
@@ -1152,8 +1149,16 @@ textarea{
     display: flex;
   }
 
+  .md\:hidden{
+    display: none;
+  }
+
   .md\:w-8\/12{
     width: 66.666667%;
+  }
+
+  .md\:flex-col{
+    flex-direction: column;
   }
 
   .md\:text-sm{

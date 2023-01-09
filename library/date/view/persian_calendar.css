@@ -1,0 +1,106 @@
+/* *************************************
+   *   Library coded by				   *
+   *   Sandro Alves Peres 2009-11-17   *
+   *                                   *
+   *   sandrinhodobanjo@yahoo.com.br   *
+   ************************************* */
+
+@charset "iso-8859-1";
+
+#MYCALENDAR_MAIN_TB{
+ background-color:#F0F1FF;
+ border:1px solid #999 !important;
+ filter:progid:DXImageTransform.Microsoft.Shadow(color=#888888, direction=135, strength=3);	
+}
+
+.MYCALENDAR_LINE_TOP{
+ font-family:Verdana, Geneva, sans-serif;
+ font-size:12px !important;
+ font-weight:bold !important;
+ color:#222;
+ height:25px;
+ background-color:#C8D0D4;
+}
+
+.MYCALENDAR_LINE_BOTTOM{
+ font-family:Verdana, Geneva, sans-serif;
+ font-size:12px !important;
+ font-weight:bold !important;
+ color:#033;
+ height:22px;
+ padding:3px !important;
+}
+
+.MYCALENDAR_DAY_WEEK{
+ font-family:Verdana, Geneva, sans-serif;
+ font-size:12px;
+ font-weight:bold !important;
+ color:#970000;
+ text-transform:uppercase;
+ padding:3px !important;
+}
+
+.MYCALENDAR_CELL_DAY{
+ font-family:Verdana, Geneva, sans-serif;
+ font-size:12px;
+ font-weight:normal;
+ padding:3px !important;
+}
+
+.MYCALENDAR_NUMBER_DAY{
+ font-family:Verdana, Geneva, sans-serif;
+ font-size:12px;
+ color:#068;
+ font-weight:normal;
+ text-decoration:none !important;
+ cursor:pointer !important;
+}
+
+.MYCALENDAR_NUMBER_CURRENT_DAY{
+ font-family:Verdana, Geneva, sans-serif;
+ font-size:12px;
+ color:#970000;
+ font-weight:bold;
+ text-decoration:none !important;
+ cursor:pointer !important;
+}
+
+.MYCALENDAR_NUMBER_HOLIDAY{
+ font-family:Verdana, Geneva, sans-serif;
+ font-size:12px;
+ color:#090;
+ font-weight:bold;
+ text-decoration:none !important;
+ cursor:pointer !important;
+}
+
+#MYCALENDAR_DIV_BACK{
+ left:0;
+ top:0;
+ width:213px;
+ z-index:99999 !important;
+ position:absolute;
+ visibility:hidden;
+ display:none;
+}
+
+#MYCALENDAR_FRAME_BACK{
+ left:0;
+ top:0;
+ z-index:99998 !important;
+ position:absolute;
+ visibility:hidden;
+ display:none;
+ width:213px;
+ filter:Alpha(opacity=0) !important;
+ -moz-opacity: 0.0 !important;
+ opacity:0.0 !important;
+ -khtml-opacity:.0 !important;
+}
+
+#MYCALENDAR_SPAN_YEAR{
+ font-family:Verdana, Geneva, sans-serif;
+ font-size:12px;
+ font-weight:bold;
+ color:#063;
+}

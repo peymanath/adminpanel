@@ -4,8 +4,8 @@
   "description": "admin panel",
   "main": "index.js",
   "scripts": {
-    "tw": "tailwindcss -i ./tailwindcss.css -o ../public/css/style.css",
-    "tw-watch": "tailwindcss -i ./tailwindcss.css -o ../public/css/style.css --watch"
+    "tw": "tailwindcss -i ./tailwindcss.css -o ../../public/css/style.css",
+    "tw-watch": "tailwindcss -i ./tailwindcss.css -o ../../public/css/style.css --watch"
   },
   "author": "",
   "license": "ISC",
