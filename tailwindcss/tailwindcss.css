@@ -43,14 +43,15 @@
     }
 
     .sidebar-menu.active {
-        width: 50px;
+        width: 70px;
     }
 
     .sidebar-menu.active ul {
-        padding-right: 12px;
+        padding: 1rem 0px;
     }
 
-    .sidebar-menu.active ul li .text-menu {
+    .sidebar-menu.active ul li .text-menu,
+    .sidebar-menu.active .PanelBtnSidebar {
         display: none;
     }
 
