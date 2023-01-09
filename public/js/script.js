@@ -20,5 +20,14 @@ $('.btn-menu-mobile').forEach(item => {
 $('#product-fixed-fare').addEventListener('click', () => $('.productTransportationFee').classList.toggle('hidden'))
 
 document.addEventListener('DOMContentLoaded', () => {
-    const perDate = new PersianDate().newDate()
+
+    // Call Persian Date
+    const perDate = new PersianDate().newDate();
+
+    // Call Editor
+    tinymce.init({
+        selector: 'textarea#editor',
+        language: 'fa'
+    });
+    
 })

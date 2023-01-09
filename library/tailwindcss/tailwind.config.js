@@ -21,7 +21,7 @@ module.exports = {
         gray: '#1F2D3D',
         primary: '#76EE59',
         headerborder: '#C4C4C4',
-        input: '#CED4DA',
+        input: '#eee',
         'c-red': '#DC3545',
         'c-green': '#28A745',
       }

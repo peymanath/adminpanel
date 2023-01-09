@@ -279,461 +279,470 @@
             </header>
 
             <!-- content for the "Add Product" page-->
-            <main class="flex flex-col p-5 gap-4 lg:flex-row lg:gap-10">
+            <main class="p-5 flex flex-col gap-4 ">
 
-                <!-- Content right side -->
-                <div class="flex flex-col w-full lg:w-1/2 gap-y-6">
+                <!-- Product Title & description -->
+                <div class="flex flex-col gap-4 ">
 
-                    <!-- Basic product information Form -->
-                    <div class="flex flex-col gap-y-4">
+                    <!-- Product Title -->
+                    <div class="flex flex-col gap-y-2">
 
-                        <!-- Product Title -->
-                        <div class="flex flex-col gap-y-2">
+                        <label for="product-title" class="font-bold pr-1">عنوان محصول</label>
 
-                            <label for="product-title" class="font-bold pr-1">عنوان محصول</label>
-
-                            <input id="product-title" type="text" tabindex="1" placeholder="محصول شماره یک" class="bg-white border border-input rounded-md py-1.5 px-2 text-sm leading-6 shadow" autofocus>
-
-                        </div>
-
-                        <!-- Product Category -->
-                        <div class="flex flex-col gap-y-2">
-
-                            <label for="product-category" class="font-bold pr-1">انتخاب دسته بندی</label>
-
-                            <select id="product-category" type="text" tabindex="2" class="form-select appearance-none w-full rounded-md py-1.5 px-2 border bg-white border-input text-sm leading-6 shadow">
-
-                                <option value="selected" disabled selected>انتخاب دسته بندی</option>
-                                <option value="id-1">اجتماعی</option>
-                                <option value="id-2">معنوی</option>
-                                <option value="id-3">اقتصادی</option>
-                                <option value="id-4">خبر جدید</option>
-                                <option value="id-">تکنولوژی</option>
-
-                            </select>
-
-                        </div>
-
-                        <!-- Product Brand -->
-                        <div class="flex flex-col gap-y-2">
-
-                            <label for="product-brand" class="font-bold pr-1">انتخاب برند</label>
-
-                            <select id="product-brand" type="text" tabindex="3" class="form-select appearance-none w-full rounded-md py-1.5 px-2 border bg-white border-input text-sm leading-6 shadow">
-
-                                <option value="delected" disabled selected>برند مورد نظر خود را انتخاب کنید</option>
-                                <option value="id-1">گوگل</option>
-                                <option value="id-2">بایننس</option>
-                                <option value="id-3">مایکروسافت</option>
-                                <option value="id-4">ری اکت</option>
-                                <option value="id-">نکست</option>
-
-                            </select>
-
-                        </div>
-
-                        <!-- Product Weight -->
-                        <div class="flex flex-col gap-y-2">
-
-                            <label for="product-wieght" class="font-bold pr-1">وزن (گرم)</label>
-
-                            <input id="product-wieght" type="text" tabindex="4" placeholder="۲۰۰۰" class="bg-white border border-input rounded-md py-1.5 px-2 text-sm leading-6 shadow">
-
-                        </div>
-
-                        <!-- Product Inventory -->
-                        <div class="flex flex-col gap-y-2">
-
-                            <label for="product-stock" class="font-bold pr-1">موجودی انبار</label>
-
-                            <input id="product-stock" type="text" tabindex="5" placeholder="۱۰، ۳۰، ۹۰" class="bg-white border border-input rounded-md py-1.5 px-2 text-sm leading-6 shadow">
-
-                        </div>
-
-                        <!-- Product Tags -->
-                        <div class="flex flex-col gap-y-2">
-
-                            <label for="product-tag" class="font-bold pr-1">برچسب ها</label>
-
-                            <!-- hidden input for send data to backend -->
-                            <input type="hidden" name="TagList" id="TagList">
-
-                            <!-- manage by "tag input Library" -->
-                            <div class=" flex flex-wrap items-center gap-x-2 bg-white border border-input rounded-md py-1.5 px-2  text-sm leading-6 shadow">
-
-                                <!-- Show Tag List -->
-                                <tags class="listTagsJs flex flex-wrap items-center gap-3 w-full">
-
-                                    <!-- Managed by tagInput Library & added item by library here -->
-
-                                    <span class="flex-1 min-w-[80px]">
-
-                                        <form class="addTagJs w-full">
-
-                                            <input id="product-tag" type="text" tabindex="6" placeholder="افزودن برچسب جدید" class="w-full inputTagJS">
-
-                                        </form>
-
-                                    </span>
-
-                                </tags>
-
-                            </div>
-
-                        </div>
-
-                        <!-- Product ID -->
-                        <div class="flex flex-col gap-y-2">
-
-                            <label for="product-ID" class="font-bold pr-1">شناسه کالا</label>
-
-                            <input id="product-ID" type="text" tabindex="7" placeholder="افزودن شناسه کالا" class="bg-white border border-input rounded-md py-1.5 px-2 text-sm leading-6 shadow">
-
-                        </div>
-
-                        <!-- Product return of goods -->
-                        <div class="flex gap-x-5 mt-3">
-
-                            <label for="product-return" class="font-bold pr-1">بازگشت کالا</label>
-
-                            <input id="product-return" type="checkbox" tabindex="8" class="input-circle appearance-none w-10 rounded-full h-5 bg-slate-200 bg-no-repeat bg-left cursor-pointer duration-300 text-sm leading-6 checked:bg-primary checked:bg-right checked:shadow-md">
-
-                        </div>
+                        <input id="product-title" type="text" tabindex="1" placeholder="محصول شماره یک" class="bg-white border-2 border-input rounded-md py-1.5 px-2 text-sm leading-6" autofocus>
 
                     </div>
 
-                    <!-- Shipping settings Form -->
-                    <div class="bg-white border-input rounded-md p-4 shadow-md">
-
-                        <!-- Shipping settings title -->
-                        <div class="flex gap-x-2 text-base items-center border-b border-b-slate-300 pb-2 text-gray">
-
-                            <svg class="w-8 h-8">
-                                <use xlink:href="#delivery"></use>
-                            </svg>
-
-                            <span class="font-bold">تنظیمات حمل و نقل</span>
-
-                        </div>
-
-                        <!-- Shipping settings items -->
-                        <div class="flex flex-col gap-y-4">
-
-                            <!-- Free shipping section -->
-                            <div class="flex justify-between pt-4">
-
-                                <label for="product-free-send">حمل و نقل رایگان</label>
-
-                                <input id="product-free-send" type="checkbox" tabindex="9" class="input-circle appearance-none w-10 rounded-full h-5 bg-slate-200 bg-no-repeat bg-left cursor-pointer duration-300 text-sm leading-6 checked:bg-primary checked:bg-right checked:shadow-md">
-
-                            </div>
-
-                            <!-- Fixed fare section -->
-                            <div class="flex justify-between pt-2">
-
-                                <label for="product-fixed-fare">کرایه ثابت</label>
-
-                                <input id="product-fixed-fare" type="checkbox" tabindex="10" class="input-circle appearance-none w-10 rounded-full h-5 bg-slate-200 bg-no-repeat bg-left cursor-pointer duration-300 text-sm leading-6 checked:bg-primary checked:bg-right checked:shadow-md">
-
-                            </div>
-
-                            <!-- Transportation fee section -->
-                            <div class="productTransportationFee hidden">
-
-                                <div class="flex flex-col gap-y-2 border border-slate-300 rounded-md p-4">
-
-                                    <label for="product-transportation-fee">هزینه حمل و نقل</label>
-
-                                    <input id="product-transportation-fee" type="text" tabindex="11" placeholder="۳۰۰۰۰" class="bg-white border border-input rounded-md py-1.5 px-2 text-sm leading-6">
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <!-- Low stock warning section -->
-                    <div class="bg-white border-input rounded-md p-4 shadow-md">
-
-                        <!-- Low stock warning title -->
-                        <div class="flex gap-x-2 text-base items-center border-b border-b-slate-300 pb-2 text-gray">
-
-                            <svg class="w-8 h-8">
-                                <use xlink:href="#warning"></use>
-                            </svg>
-
-                            <span class="font-bold">اخطار کم بودن موجودی</span>
-
-                        </div>
-
-                        <!-- Low stock warning item -->
-                        <div class="flex flex-col gap-y-4 pt-4">
-
-                            <div class="flex flex-col gap-y-2 rounded-md">
-
-                                <label for="product-total">تعداد</label>
-
-                                <input id="product-total" type="text" tabindex="12" placeholder="5" class="bg-white border border-input rounded-md py-1.5 px-2 text-sm leading-6">
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <!-- product video section -->
-                    <div class="bg-white border-input rounded-md p-4 shadow-md">
-
-                        <!-- product video title -->
-                        <div class="flex gap-x-2 text-base items-center border-b border-b-slate-300 pb-2 text-gray">
-
-                            <svg class="w-8 h-8">
-                                <use xlink:href="#video"></use>
-                            </svg>
-                            <span class="font-bold">ویدیو محصول</span>
-
-                        </div>
-
-                        <!-- product video item -->
-                        <div class="flex flex-col gap-y-4 pt-4">
-
-                            <div class="flex flex-col gap-y-2 rounded-md">
-
-                                <label for="product-video-link">لینک ویدیو</label>
-
-                                <input id="product-video-link" type="text" tabindex="13" placeholder="https://taftaco.ir/video/...." class="bg-white border border-input rounded-md py-1.5 px-2 text-left text-sm leading-6" style="direction: ltr;">
-
-                                <p class="pb-4 mt-4 text-slate-500 text-xs md:text-sm lg:text">لینک یوتیوب یا ویمو.آپارات و یا انواع پرونده های خاص مانند MP4 ، WebM ، ogv را وارد کنید.</p>
-
-                                <div class="flex flex-wrap gap-x-2 justify-end text-xs md:text-sm lg:text">
-
-                                    <button class="text-c-green border border-c-green rounded-md py-2 px-4 duration-300 hover:bg-c-green hover:text-white">آپلود ویدیو</button>
-
-                                    <button class="text-white bg-c-red border border-c-red rounded-md py-2 px-4 duration-300 hover:bg-white hover:text-c-red">انتخاب ویدیو</button>
-
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <!-- seo product information section -->
-                    <div class="bg-white border-input rounded-md p-4 shadow-md">
-
-                        <!-- seo product information title -->
-                        <div class="flex gap-x-2 text-base items-center border-b border-b-slate-300 pb-2 text-gray">
-
-                            <svg class="w-8 h-8">
-                                <use xlink:href="#seo"></use>
-                            </svg>
-
-                            <span class="font-bold">اطلاعات سئو</span>
-
-                        </div>
-
-                        <!-- seo product information items -->
-                        <div class="flex flex-col gap-y-4 pt-4">
-
-                            <div class="flex flex-col gap-y-2 rounded-md pb-4">
-
-                                <label for="product-title-tag">تگ عنوان | < title></label>
-
-                                <input id="product-title-tag" type="text" tabindex="14" placeholder="بهترین محصولات الکترونیکی سال 2023" class="bg-white border border-input rounded-md py-1.5 px-2 text-sm leading-6">
-
-                            </div>
-
-                            <div class="flex flex-col gap-y-2 rounded-md pb-4">
-
-                                <label for="product-description-tag">متا توضیحات | < meta></label>
-
-                                <textarea id="product-description-tag" type="text" tabindex="15" placeholder="خرید محصولات الکترونیکی ...." rows="3" class="bg-white border border-input rounded-md py-1.5 px-2 text-sm leading-6"></textarea>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
+                    <textarea name="description_product" id="editor" cols="30" rows="10"></textarea>
                 </div>
 
-                <!-- Content left side -->
-                <div class="flex flex-col w-full lg:w-1/2 gap-y-4">
+                <!-- Product Information -->
+                <div class="flex flex-col gap-4 lg:flex-row lg:gap-10">
+                    <!-- Content right side -->
+                    <div class="flex flex-col w-full lg:w-1/2 gap-y-6">
 
-                    <!-- Product picture section -->
-                    <div class="bg-white border-input rounded-md p-4 shadow-md">
+                        <!-- Basic product information Form -->
+                        <div class="flex flex-col gap-y-4">
 
-                        <!-- Product picture title -->
-                        <div class="flex gap-x-2 text-base items-center border-b border-b-slate-300 pb-2 text-gray">
+                            <!-- Product Category -->
+                            <div class="flex flex-col gap-y-2">
 
-                            <svg class="w-8 h-8">
-                                <use xlink:href="#picture"></use>
-                            </svg>
+                                <label for="product-category" class="font-bold pr-1">انتخاب دسته بندی</label>
 
-                            <span class="font-bold">تصاویر کالا</span>
+                                <select id="product-category" type="text" tabindex="2" class="form-select appearance-none w-full rounded-md py-1.5 px-2 border bg-white border-input text-sm leading-6 shadow">
+
+                                    <option value="selected" disabled selected>انتخاب دسته بندی</option>
+                                    <option value="id-1">اجتماعی</option>
+                                    <option value="id-2">معنوی</option>
+                                    <option value="id-3">اقتصادی</option>
+                                    <option value="id-4">خبر جدید</option>
+                                    <option value="id-">تکنولوژی</option>
+
+                                </select>
+
+                            </div>
+
+                            <!-- Product Brand -->
+                            <div class="flex flex-col gap-y-2">
+
+                                <label for="product-brand" class="font-bold pr-1">انتخاب برند</label>
+
+                                <select id="product-brand" type="text" tabindex="3" class="form-select appearance-none w-full rounded-md py-1.5 px-2 border bg-white border-input text-sm leading-6 shadow">
+
+                                    <option value="delected" disabled selected>برند مورد نظر خود را انتخاب کنید</option>
+                                    <option value="id-1">گوگل</option>
+                                    <option value="id-2">بایننس</option>
+                                    <option value="id-3">مایکروسافت</option>
+                                    <option value="id-4">ری اکت</option>
+                                    <option value="id-">نکست</option>
+
+                                </select>
+
+                            </div>
+
+                            <!-- Product Weight -->
+                            <div class="flex flex-col gap-y-2">
+
+                                <label for="product-wieght" class="font-bold pr-1">وزن (گرم)</label>
+
+                                <input id="product-wieght" type="text" tabindex="4" placeholder="۲۰۰۰" class="bg-white border border-input rounded-md py-1.5 px-2 text-sm leading-6 shadow">
+
+                            </div>
+
+                            <!-- Product Inventory -->
+                            <div class="flex flex-col gap-y-2">
+
+                                <label for="product-stock" class="font-bold pr-1">موجودی انبار</label>
+
+                                <input id="product-stock" type="text" tabindex="5" placeholder="۱۰، ۳۰، ۹۰" class="bg-white border border-input rounded-md py-1.5 px-2 text-sm leading-6 shadow">
+
+                            </div>
+
+                            <!-- Product Tags -->
+                            <div class="flex flex-col gap-y-2">
+
+                                <label for="product-tag" class="font-bold pr-1">برچسب ها</label>
+
+                                <!-- hidden input for send data to backend -->
+                                <input type="hidden" name="TagList" id="TagList">
+
+                                <!-- manage by "tag input Library" -->
+                                <div class=" flex flex-wrap items-center gap-x-2 bg-white border border-input rounded-md py-1.5 px-2  text-sm leading-6 shadow">
+
+                                    <!-- Show Tag List -->
+                                    <tags class="listTagsJs flex flex-wrap items-center gap-3 w-full">
+
+                                        <!-- Managed by tagInput Library & added item by library here -->
+
+                                        <span class="flex-1 min-w-[80px]">
+
+                                            <form class="addTagJs w-full">
+
+                                                <input id="product-tag" type="text" tabindex="6" placeholder="افزودن برچسب جدید" class="w-full inputTagJS">
+
+                                            </form>
+
+                                        </span>
+
+                                    </tags>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Product ID -->
+                            <div class="flex flex-col gap-y-2">
+
+                                <label for="product-ID" class="font-bold pr-1">شناسه کالا</label>
+
+                                <input id="product-ID" type="text" tabindex="7" placeholder="افزودن شناسه کالا" class="bg-white border border-input rounded-md py-1.5 px-2 text-sm leading-6 shadow">
+
+                            </div>
+
+                            <!-- Product return of goods -->
+                            <div class="flex gap-x-5 mt-3">
+
+                                <label for="product-return" class="font-bold pr-1">بازگشت کالا</label>
+
+                                <input id="product-return" type="checkbox" tabindex="8" class="input-circle appearance-none w-10 rounded-full h-5 bg-slate-200 bg-no-repeat bg-left cursor-pointer duration-300 text-sm leading-6 checked:bg-primary checked:bg-right checked:shadow-md">
+
+                            </div>
 
                         </div>
 
-                        <!-- Product picture position after upload -->
-                        <div class="flex flex-col gap-y-4 pt-4 text-input">
+                        <!-- Shipping settings Form -->
+                        <div class="bg-white border-input rounded-md p-4 shadow-md">
 
-                            <div class="flex item-center justify-center w-full border-[3px] border-dotted rounded-md py-7">
+                            <!-- Shipping settings title -->
+                            <div class="flex gap-x-2 text-base items-center border-b border-b-slate-300 pb-2 text-gray">
 
-                                <svg class="w-32 h-32">
-                                    <use xlink:href="#add-picture"></use>
+                                <svg class="w-8 h-8">
+                                    <use xlink:href="#delivery"></use>
                                 </svg>
 
+                                <span class="font-bold">تنظیمات حمل و نقل</span>
+
+                            </div>
+
+                            <!-- Shipping settings items -->
+                            <div class="flex flex-col gap-y-4">
+
+                                <!-- Free shipping section -->
+                                <div class="flex justify-between pt-4">
+
+                                    <label for="product-free-send">حمل و نقل رایگان</label>
+
+                                    <input id="product-free-send" type="checkbox" tabindex="9" class="input-circle appearance-none w-10 rounded-full h-5 bg-slate-200 bg-no-repeat bg-left cursor-pointer duration-300 text-sm leading-6 checked:bg-primary checked:bg-right checked:shadow-md">
+
+                                </div>
+
+                                <!-- Fixed fare section -->
+                                <div class="flex justify-between pt-2">
+
+                                    <label for="product-fixed-fare">کرایه ثابت</label>
+
+                                    <input id="product-fixed-fare" type="checkbox" tabindex="10" class="input-circle appearance-none w-10 rounded-full h-5 bg-slate-200 bg-no-repeat bg-left cursor-pointer duration-300 text-sm leading-6 checked:bg-primary checked:bg-right checked:shadow-md">
+
+                                </div>
+
+                                <!-- Transportation fee section -->
+                                <div class="productTransportationFee hidden">
+
+                                    <div class="flex flex-col gap-y-2 border border-slate-300 rounded-md p-4">
+
+                                        <label for="product-transportation-fee">هزینه حمل و نقل</label>
+
+                                        <input id="product-transportation-fee" type="text" tabindex="11" placeholder="۳۰۰۰۰" class="bg-white border border-input rounded-md py-1.5 px-2 text-sm leading-6">
+
+                                    </div>
+
+                                </div>
+
                             </div>
 
                         </div>
 
-                        <!-- Product picture item -->
-                        <div class="flex flex-wrap items-center justify-between gap-4 pt-4 text-xs md:text-sm lg:text">
+                        <!-- Low stock warning section -->
+                        <div class="bg-white border-input rounded-md p-4 shadow-md">
 
-                            <span class="text-slate-500">گالری تصاویر (اندازه تصاویر زیر ۵۱۲*۵۱۲ نباشد)</span>
+                            <!-- Low stock warning title -->
+                            <div class="flex gap-x-2 text-base items-center border-b border-b-slate-300 pb-2 text-gray">
 
-                            <button class="text-c-green border border-c-green rounded-md py-2 px-4 duration-300 hover:bg-c-green hover:text-white float-left">آپلود عکس</button>
+                                <svg class="w-8 h-8">
+                                    <use xlink:href="#warning"></use>
+                                </svg>
+
+                                <span class="font-bold">اخطار کم بودن موجودی</span>
+
+                            </div>
+
+                            <!-- Low stock warning item -->
+                            <div class="flex flex-col gap-y-4 pt-4">
+
+                                <div class="flex flex-col gap-y-2 rounded-md">
+
+                                    <label for="product-total">تعداد</label>
+
+                                    <input id="product-total" type="text" tabindex="12" placeholder="5" class="bg-white border border-input rounded-md py-1.5 px-2 text-sm leading-6">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- product video section -->
+                        <div class="bg-white border-input rounded-md p-4 shadow-md">
+
+                            <!-- product video title -->
+                            <div class="flex gap-x-2 text-base items-center border-b border-b-slate-300 pb-2 text-gray">
+
+                                <svg class="w-8 h-8">
+                                    <use xlink:href="#video"></use>
+                                </svg>
+                                <span class="font-bold">ویدیو محصول</span>
+
+                            </div>
+
+                            <!-- product video item -->
+                            <div class="flex flex-col gap-y-4 pt-4">
+
+                                <div class="flex flex-col gap-y-2 rounded-md">
+
+                                    <label for="product-video-link">لینک ویدیو</label>
+
+                                    <input id="product-video-link" type="text" tabindex="13" placeholder="https://taftaco.ir/video/...." class="bg-white border border-input rounded-md py-1.5 px-2 text-left text-sm leading-6" style="direction: ltr;">
+
+                                    <p class="pb-4 mt-4 text-slate-500 text-xs md:text-sm lg:text">لینک یوتیوب یا ویمو.آپارات و یا انواع پرونده های خاص مانند MP4 ، WebM ، ogv را وارد کنید.</p>
+
+                                    <div class="flex flex-wrap gap-x-2 justify-end text-xs md:text-sm lg:text">
+
+                                        <button class="text-c-green border border-c-green rounded-md py-2 px-4 duration-300 hover:bg-c-green hover:text-white">آپلود ویدیو</button>
+
+                                        <button class="text-white bg-c-red border border-c-red rounded-md py-2 px-4 duration-300 hover:bg-white hover:text-c-red">انتخاب ویدیو</button>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- seo product information section -->
+                        <div class="bg-white border-input rounded-md p-4 shadow-md">
+
+                            <!-- seo product information title -->
+                            <div class="flex gap-x-2 text-base items-center border-b border-b-slate-300 pb-2 text-gray">
+
+                                <svg class="w-8 h-8">
+                                    <use xlink:href="#seo"></use>
+                                </svg>
+
+                                <span class="font-bold">اطلاعات سئو</span>
+
+                            </div>
+
+                            <!-- seo product information items -->
+                            <div class="flex flex-col gap-y-4 pt-4">
+
+                                <div class="flex flex-col gap-y-2 rounded-md pb-4">
+
+                                    <label for="product-title-tag">تگ عنوان | < title></label>
+
+                                    <input id="product-title-tag" type="text" tabindex="14" placeholder="بهترین محصولات الکترونیکی سال 2023" class="bg-white border border-input rounded-md py-1.5 px-2 text-sm leading-6">
+
+                                </div>
+
+                                <div class="flex flex-col gap-y-2 rounded-md pb-4">
+
+                                    <label for="product-description-tag">متا توضیحات | < meta></label>
+
+                                    <textarea id="product-description-tag" type="text" tabindex="15" placeholder="خرید محصولات الکترونیکی ...." rows="3" class="bg-white border border-input rounded-md py-1.5 px-2 text-sm leading-6"></textarea>
+
+                                </div>
+
+                            </div>
 
                         </div>
 
                     </div>
 
-                    <!-- Seller information section -->
-                    <div class="bg-white border-input rounded-md p-4 shadow-md">
+                    <!-- Content left side -->
+                    <div class="flex flex-col w-full lg:w-1/2 gap-y-4">
 
-                        <!-- Seller information title -->
-                        <div class="flex gap-x-2 text-base items-center border-b border-b-slate-300 pb-2 text-gray">
+                        <!-- Product picture section -->
+                        <div class="bg-white border-input rounded-md p-4 shadow-md">
 
-                            <svg class="w-8 h-8">
-                                <use xlink:href="#cash"></use>
-                            </svg>
+                            <!-- Product picture title -->
+                            <div class="flex gap-x-2 text-base items-center border-b border-b-slate-300 pb-2 text-gray">
 
-                            <span class="font-bold">اطلاعات فروشنده</span>
+                                <svg class="w-8 h-8">
+                                    <use xlink:href="#picture"></use>
+                                </svg>
+
+                                <span class="font-bold">تصاویر کالا</span>
+
+                            </div>
+
+                            <!-- Product picture position after upload -->
+                            <div class="flex flex-col gap-y-4 pt-4 text-input">
+
+                                <div class="flex item-center justify-center w-full border-[3px] border-dotted rounded-md py-7">
+
+                                    <svg class="w-32 h-32">
+                                        <use xlink:href="#add-picture"></use>
+                                    </svg>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Product picture item -->
+                            <div class="flex flex-wrap items-center justify-between gap-4 pt-4 text-xs md:text-sm lg:text">
+
+                                <span class="text-slate-500">گالری تصاویر (اندازه تصاویر زیر ۵۱۲*۵۱۲ نباشد)</span>
+
+                                <button class="text-c-green border border-c-green rounded-md py-2 px-4 duration-300 hover:bg-c-green hover:text-white float-left">آپلود عکس</button>
+
+                            </div>
 
                         </div>
 
-                        <!-- Seller information items -->
-                        <div class="flex flex-col gap-y-4 pt-4">
+                        <!-- Seller information section -->
+                        <div class="bg-white border-input rounded-md p-4 shadow-md">
 
-                            <!-- Seller information items > price -->
-                            <div class="flex flex-col gap-y-2 rounded-md">
+                            <!-- Seller information title -->
+                            <div class="flex gap-x-2 text-base items-center border-b border-b-slate-300 pb-2 text-gray">
 
-                                <label for="product-price-seller">قیمت</label>
+                                <svg class="w-8 h-8">
+                                    <use xlink:href="#cash"></use>
+                                </svg>
 
-                                <input id="product-price-seller" type="text" tabindex="15" placeholder="۲۹۵,۰۰۰" class="bg-white border border-input rounded-md py-1.5 px-2 text-sm leading-6">
-
-                            </div>
-
-                            <!-- Seller information items > stock -->
-                            <div class="flex flex-col gap-y-2 rounded-md">
-
-                                <label for="product-stock-seller">موجودی انبار</label>
-
-                                <input id="product-stock-seller" type="text" tabindex="16" placeholder="۶۷" class="bg-white border border-input rounded-md py-1.5 px-2 text-sm leading-6">
+                                <span class="font-bold">اطلاعات فروشنده</span>
 
                             </div>
 
-                            <!-- Seller information items > off -->
-                            <div class="flex flex-col gap-y-2 rounded-md">
+                            <!-- Seller information items -->
+                            <div class="flex flex-col gap-y-4 pt-4">
 
-                                <label for="product-offer-price-seller">تخفیف</label>
+                                <!-- Seller information items > price -->
+                                <div class="flex flex-col gap-y-2 rounded-md">
 
-                                <input id="product-offer-price-seller" type="text" tabindex="17" placeholder="۴۰,۰۰۰" class="bg-white border border-input rounded-md py-1.5 px-2 text-sm leading-6">
+                                    <label for="product-price-seller">قیمت</label>
+
+                                    <input id="product-price-seller" type="text" tabindex="15" placeholder="۲۹۵,۰۰۰" class="bg-white border border-input rounded-md py-1.5 px-2 text-sm leading-6">
+
+                                </div>
+
+                                <!-- Seller information items > stock -->
+                                <div class="flex flex-col gap-y-2 rounded-md">
+
+                                    <label for="product-stock-seller">موجودی انبار</label>
+
+                                    <input id="product-stock-seller" type="text" tabindex="16" placeholder="۶۷" class="bg-white border border-input rounded-md py-1.5 px-2 text-sm leading-6">
+
+                                </div>
+
+                                <!-- Seller information items > off -->
+                                <div class="flex flex-col gap-y-2 rounded-md">
+
+                                    <label for="product-offer-price-seller">تخفیف</label>
+
+                                    <input id="product-offer-price-seller" type="text" tabindex="17" placeholder="۴۰,۰۰۰" class="bg-white border border-input rounded-md py-1.5 px-2 text-sm leading-6">
+
+                                </div>
+
+                                <!-- Seller information items > off date -->
+                                <div class="flex flex-col gap-y-2 rounded-md">
+
+                                    <label for="product-offer-price-seller-date">تاریخ انقضا تخفیف</label>
+
+                                    <input id="PersianDate" type="text" tabindex="18" placeholder="۱۴۰۳/۱۰/۱۷" class="bg-white border border-input rounded-md py-1.5 px-2 text-sm leading-6">
+                                </div>
 
                             </div>
 
-                            <!-- Seller information items > off date -->
-                            <div class="flex flex-col gap-y-2 rounded-md">
+                        </div>
 
-                                <label for="product-offer-price-seller-date">تاریخ انقضا تخفیف</label>
+                        <!-- Product property section -->
+                        <div class="bg-white border-input rounded-md p-4 shadow-md">
 
-                                <input id="PersianDate" type="text" tabindex="18" placeholder="۱۴۰۳/۱۰/۱۷" class="bg-white border border-input rounded-md py-1.5 px-2 text-sm leading-6">
+                            <!-- Product property title -->
+                            <div class="flex gap-x-2 text-base items-center border-b border-b-slate-300 pb-2 text-gray">
+
+                                <svg class="w-8 h-8">
+                                    <use xlink:href="#product_list"></use>
+                                </svg>
+
+                                <span class="font-bold">ویژگی های کالا</span>
+
+                            </div>
+
+                            <!-- Product property items -->
+                            <div class="flex flex-col gap-y-4 pt-4">
+
+                                <!-- Product property items > select color -->
+                                <div class="flex flex-col gap-y-2">
+
+                                    <label for="product-color">انتخاب رنگ</label>
+
+                                    <select id="product-color" type="text" tabindex="19" class="form-select appearance-none w-full rounded-md py-1.5 px-2 border bg-white border-input text-sm leading-6">
+
+                                        <option value="selected" disabled selected>انتخاب رنگ</option>
+                                        <option value="id-1">زرد</option>
+                                        <option value="id-2">قرمز</option>
+                                        <option value="id-3">سبز</option>
+                                        <option value="id-4">آبی</option>
+                                        <option value="id-5">بنفش</option>
+                                        <option value="id-6">نارنجی</option>
+
+                                    </select>
+
+                                </div>
+
+                                <!-- Product property items > select property -->
+                                <div class="flex flex-col gap-y-2">
+
+                                    <label for="product-property">انتخاب ویژگی</label>
+
+                                    <select id="product-property" type="text" tabindex="20" class="form-select appearance-none w-full rounded-md py-1.5 px-2 border bg-white border-input text-sm leading-6">
+
+                                        <option value="selected" disabled selected>انتخاب ویژگی محصول</option>
+                                        <option value="id-1">دارای لکه</option>
+                                        <option value="id-2">دست دوم</option>
+                                        <option value="id-3">استوک</option>
+
+                                    </select>
+
+                                </div>
+
+                                <!-- Product property items > select other property -->
+                                <div class="flex flex-col gap-y-2">
+
+                                    <label for="product-other-property">سایر ویژگی (اختیاری)</label>
+
+                                    <select id="product-other-property" type="text" tabindex="21" class="form-select appearance-none w-full rounded-md py-1.5 px-2 border bg-white border-input text-sm leading-6">
+
+                                        <option value="selected" disabled selected>درج ویژگی</option>
+                                        <option value="id-1">زرد</option>
+                                        <option value="id-2">قرمز</option>
+                                        <option value="id-3">سبز</option>
+                                        <option value="id-4">آبی</option>
+                                        <option value="id-5">بنفش</option>
+                                        <option value="id-6">نارنجی</option>
+
+                                    </select>
+
+                                </div>
+
+                                <!-- Product property items > description -->
+                                <span class="text-slate-500 text-xs md:text-sm lg:text">ویژگی های این محصول را انتخاب کنید و سپس مقادیر ورودی هر ویژگی را وارد کنید.</span>
+
                             </div>
 
                         </div>
 
                     </div>
-
-                    <!-- Product property section -->
-                    <div class="bg-white border-input rounded-md p-4 shadow-md">
-
-                        <!-- Product property title -->
-                        <div class="flex gap-x-2 text-base items-center border-b border-b-slate-300 pb-2 text-gray">
-
-                            <svg class="w-8 h-8">
-                                <use xlink:href="#product_list"></use>
-                            </svg>
-
-                            <span class="font-bold">ویژگی های کالا</span>
-
-                        </div>
-
-                        <!-- Product property items -->
-                        <div class="flex flex-col gap-y-4 pt-4">
-
-                            <!-- Product property items > select color -->
-                            <div class="flex flex-col gap-y-2">
-
-                                <label for="product-color">انتخاب رنگ</label>
-
-                                <select id="product-color" type="text" tabindex="19" class="form-select appearance-none w-full rounded-md py-1.5 px-2 border bg-white border-input text-sm leading-6">
-
-                                    <option value="selected" disabled selected>انتخاب رنگ</option>
-                                    <option value="id-1">زرد</option>
-                                    <option value="id-2">قرمز</option>
-                                    <option value="id-3">سبز</option>
-                                    <option value="id-4">آبی</option>
-                                    <option value="id-5">بنفش</option>
-                                    <option value="id-6">نارنجی</option>
-
-                                </select>
-
-                            </div>
-
-                            <!-- Product property items > select property -->
-                            <div class="flex flex-col gap-y-2">
-
-                                <label for="product-property">انتخاب ویژگی</label>
-
-                                <select id="product-property" type="text" tabindex="20" class="form-select appearance-none w-full rounded-md py-1.5 px-2 border bg-white border-input text-sm leading-6">
-
-                                    <option value="selected" disabled selected>انتخاب ویژگی محصول</option>
-                                    <option value="id-1">دارای لکه</option>
-                                    <option value="id-2">دست دوم</option>
-                                    <option value="id-3">استوک</option>
-
-                                </select>
-
-                            </div>
-
-                            <!-- Product property items > select other property -->
-                            <div class="flex flex-col gap-y-2">
-
-                                <label for="product-other-property">سایر ویژگی (اختیاری)</label>
-
-                                <select id="product-other-property" type="text" tabindex="21" class="form-select appearance-none w-full rounded-md py-1.5 px-2 border bg-white border-input text-sm leading-6">
-
-                                    <option value="selected" disabled selected>درج ویژگی</option>
-                                    <option value="id-1">زرد</option>
-                                    <option value="id-2">قرمز</option>
-                                    <option value="id-3">سبز</option>
-                                    <option value="id-4">آبی</option>
-                                    <option value="id-5">بنفش</option>
-                                    <option value="id-6">نارنجی</option>
-
-                                </select>
-
-                            </div>
-
-                            <!-- Product property items > description -->
-                            <span class="text-slate-500 text-xs md:text-sm lg:text">ویژگی های این محصول را انتخاب کنید و سپس مقادیر ورودی هر ویژگی را وارد کنید.</span>
-
-                        </div>
-
-                    </div>
-
                 </div>
 
             </main>
@@ -745,19 +754,12 @@
 
     <!-- jalali date calender for inputs -->
     <script type="text/javascript" src="../library/date/newPersianDate.js"></script>
-    <!-- main script -->
-    <script src="../public/js/script.js"></script>
     <!-- tag input library -->
     <script src="../library/tag-input/tagInput.js"></script>
     <!-- tinymce library -->
     <script src="../library/tinymce/tinymce.min.js"></script>
-
-    <script>
-        tinymce.init({
-            selector: 'textarea',
-            language: 'fa'
-        });
-    </script>
+    <!-- main script -->
+    <script src="../public/js/script.js"></script>
 
 </body>
 

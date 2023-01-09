@@ -4,61 +4,68 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
 
-    ::-webkit-scrollbar {
-        width: 7px;
-    }
+.tox-tinymce {
+    font-family: 'Vazirmatn' !important;
+}
 
-    ::-webkit-scrollbar-track {
-        border-radius: 5px;
-    }
+.tox-promotion,
+.tox-statusbar__branding{
+    display: none;
+}
 
-    ::-webkit-scrollbar-thumb {
-        background: #25282b49;
-        border-radius: 5px;
-    }
+::-webkit-scrollbar {
+    width: 7px;
+}
 
-    ::-webkit-scrollbar-thumb:hover {
-        background: #25282ba4;
-    }
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+}
 
-    input,
-    select,
-    textarea {
-        @apply focus:outline-none focus-visible:outline-none focus:placeholder:text-transparent;
-    }
+::-webkit-scrollbar-thumb {
+    background: #25282b49;
+    border-radius: 5px;
+}
 
-    textarea {
-        @apply resize-none;
-    }
+::-webkit-scrollbar-thumb:hover {
+    background: #25282ba4;
+}
 
-    .TagClass {
-        @apply flex items-center gap-x-2 bg-slate-100 py-1 px-2 rounded-md
-    }
+input,
+select,
+textarea {
+    @apply focus:outline-none focus-visible:outline-none focus:placeholder:text-transparent;
+}
 
-    .input-circle {
-        background-position: 100%;
-        background-image: url(../images/circle.svg);
-    }
+textarea {
+    @apply resize-none;
+}
 
-    .sidebar-menu.active {
-        width: 70px;
-    }
+.TagClass {
+    @apply flex items-center gap-x-2 bg-slate-100 py-1 px-2 rounded-md
+}
 
-    .sidebar-menu.active ul {
-        padding: 1rem 0px;
-    }
+.input-circle {
+    background-position: 100%;
+    background-image: url(../images/circle.svg);
+}
 
-    .sidebar-menu.active ul li .text-menu,
-    .sidebar-menu.active .PanelBtnSidebar {
-        display: none;
-    }
+.sidebar-menu.active {
+    width: 70px;
+}
 
-    .form-select {
-        background-image: url(https://api.iconify.design/ion:arrow-down-b.svg);
-        background-position: left 0.75rem center;
-        background-size: 16px 12px;
-        background-repeat: no-repeat;
-    }
+.sidebar-menu.active ul {
+    padding: 1rem 0px;
+}
+
+.sidebar-menu.active ul li .text-menu,
+.sidebar-menu.active .PanelBtnSidebar {
+    display: none;
+}
+
+.form-select {
+    background-image: url(https://api.iconify.design/ion:arrow-down-b.svg);
+    background-position: left 0.75rem center;
+    background-size: 16px 12px;
+    background-repeat: no-repeat;
 }
