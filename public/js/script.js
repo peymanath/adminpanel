@@ -17,9 +17,5 @@ $('.btn-menu').addEventListener('click', () => $('.sidebar-menu').classList.togg
 $('#product-fixed-fare').addEventListener('click', () => $('.productTransportationFee').classList.toggle('hidden'))
 
 document.addEventListener('DOMContentLoaded', () => {
-    const perDate = new PersianDate();
-
-    perDate.newDate({
-        inputID: "PersianDate"
-    })
+    const perDate = new PersianDate().newDate()
 })
