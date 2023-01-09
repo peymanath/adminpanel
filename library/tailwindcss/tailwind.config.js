@@ -2,7 +2,8 @@
 module.exports = {
   content: [
     "../../**/*.html",
-    "../../public/js/*.js"
+    "../../public/js/*.js",
+    "../tag-input/*.js",
   ],
   theme: {
     fontFamily:{
