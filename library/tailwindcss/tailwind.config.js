@@ -6,12 +6,12 @@ module.exports = {
     "../tag-input/*.js",
   ],
   theme: {
-    fontFamily:{
-      sans:["'Vazirmatn'"],
-      serif:["'Vazirmatn'"],
-      mono:["'Vazirmatn'"],
-      display:["'Vazirmatn'"],
-      body:["'Vazirmatn'"],
+    fontFamily: {
+      sans: ["'Vazirmatn'"],
+      serif: ["'Vazirmatn'"],
+      mono: ["'Vazirmatn'"],
+      display: ["'Vazirmatn'"],
+      body: ["'Vazirmatn'"],
     },
     extend: {
       container: {
@@ -25,7 +25,23 @@ module.exports = {
         input: '#eee',
         'c-red': '#DC3545',
         'c-green': '#28A745',
-      }
+      },
+
+      animation: {
+
+        messageshow: 'fadeIn 1s',
+
+      },
+
+      keyframes: {
+
+        fadeIn: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 }
+        },
+
+      },
+
     },
   },
   plugins: [],

@@ -77,8 +77,21 @@
         <symbol id="times" viewBox="0 0 24 24" fill="currentColor">
             <path d="m13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29l-4.3 4.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l4.29-4.3l4.29 4.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42Z" />
         </symbol>
+
+        <symbol id="bell" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-linecap="round">
+            <path d="M15.585 15.5H5.415A1.65 1.65 0 0 1 4 13a10.526 10.526 0 0 0 1.5-5.415V6.5a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v1.085c0 1.907.518 3.78 1.5 5.415a1.65 1.65 0 0 1-1.415 2.5zm1.915-11c-.267-.934-.6-1.6-1-2s-1.066-.733-2-1m-10.912 3c.209-.934.512-1.6.912-2s1.096-.733 2.088-1M13 17c-.667 1-1.5 1.5-2.5 1.5S8.667 18 8 17"></path>
+        </symbol>
+
+        <symbol id="comments" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1">
+            <path d="M7 12h-.394a2 2 0 0 0-1.11.336L3 14V5a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v2m-2 3h7a2 2 0 0 1 2 2v9l-2.496-1.664a2 2 0 0 0-1.11-.336H12a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2z"></path>
+        </symbol>
+
+        <symbol id="left" viewBox="0 0 24 24" fill="currentColor">
+            <path fill="currentColor" d="m13.3 17.3l-4.6-4.6q-.15-.15-.212-.325q-.063-.175-.063-.375t.063-.375q.062-.175.212-.325l4.6-4.6q.275-.275.7-.275q.425 0 .7.275q.275.275.275.7q0 .425-.275.7L10.8 12l3.9 3.9q.275.275.275.7q0 .425-.275.7q-.275.275-.7.275q-.425 0-.7-.275Z"></path>
+        </symbol>
     </svg>
 
+    <div class="backdrop hidden fixed w-full h-full bg-slate-200 z-40"></div>
 
     <!-- Content Sections -->
     <section class="flex h-full">
@@ -150,12 +163,12 @@
         </aside>
 
         <!-- Mobile Menu -->
-        <div class="ShowMenuMobile bg-gray text-white fixed w-full h-full hidden z-50 md:hidden">
+        <div class="ShowMenuMobile bg-gray text-white fixed w-full h-full hidden z-[999] md:hidden">
 
             <!-- Header Section -->
             <header class="bg-primary border-b border-[#a1a1a13e]">
 
-                <div class="flex items-center justify-between py-3 px-4 gap-3">
+                <div class="flex items-center justify-between py-3 px-5 gap-3">
 
                     <!-- Close Menu -->
                     <div class="flex items-center flex-wrap gap-x-5">
@@ -187,7 +200,7 @@
             <!-- nav items sidebar -->
             <ul class="py-4 px-5 pl-8">
 
-                <!-- sidebar item 1  -->
+                <!-- Mobile Menu item 1  -->
                 <li class="pb-5">
                     <a href="#" class="flex flex-wrap items-center gap-x-2 text-sm">
                         <svg class="w-6 h-6">
@@ -197,7 +210,7 @@
                     </a>
                 </li>
 
-                <!-- sidebar item 1  -->
+                <!-- Mobile Menu item 1  -->
                 <li class="pb-5">
                     <a href="#" class="flex flex-wrap items-center gap-x-2 text-sm">
                         <svg class="w-6 h-6">
@@ -207,7 +220,7 @@
                     </a>
                 </li>
 
-                <!-- sidebar item 1  -->
+                <!-- Mobile Menu item 1  -->
                 <li class="pb-5">
                     <a href="#" class="flex flex-wrap items-center gap-x-2 text-sm">
                         <svg class="w-6 h-6">
@@ -227,7 +240,7 @@
             <!-- Header Section -->
             <header class="bg-white border-b border-[#a1a1a13e] shadow-md">
 
-                <div class="flex items-center justify-between py-3 px-4">
+                <div class="flex items-center justify-between py-3 px-5">
 
                     <!-- Dashbord user -->
                     <div class="flex items-center md:hidden flex-wrap gap-x-5">
@@ -257,12 +270,171 @@
 
                     </form>
 
+                    <div class="flex flex-wrap gap-3">
+
+                        <div class="messages-icon relative flex bg-[#F2F4F6] text-[#616262] border border-input p-1 rounded-md cursor-pointer hover:bg-[#dddddd93] duration-300 z-50">
+
+                            <svg class="w-6 h-6">
+                                <use xlink:href="#bell"></use>
+                            </svg>
+
+                            <span class="absolute bg-red-500 text-white rounded-full top-0 right-0 p-0.5 px-1 pt-1 text-[0.6rem] leading-none">4</span>
+
+                            <div class="show-messages-icon hidden absolute bg-white border-input rounded-md border top-10 left-0 overflow-hidden min-w-[280px] max-w-lg">
+
+                                <ul class="flex flex-col">
+
+                                    <li class="px-5 py-3 hover:bg-red-500 hover:text-white border-b-slate-300 border-b duration-300">
+                                        <a href="#" class="flex items-cente justify-between gap-3">
+
+                                            <svg class="w-6 h-6">
+                                                <use xlink:href="#bell"></use>
+                                            </svg>
+
+                                            <span>یک پیام جدید دارید</span>
+
+                                            <svg class="w-6 h-6">
+                                                <use xlink:href="#times"></use>
+                                            </svg>
+
+                                        </a>
+                                    </li>
+
+                                    <li class="px-5 py-3 hover:bg-red-500 hover:text-white border-b-slate-300 border-b duration-300">
+                                        <a href="#" class="flex items-cente justify-between gap-3">
+
+                                            <svg class="w-6 h-6">
+                                                <use xlink:href="#bell"></use>
+                                            </svg>
+
+                                            <span>یک پیام جدید دارید</span>
+
+                                            <svg class="w-6 h-6">
+                                                <use xlink:href="#times"></use>
+                                            </svg>
+
+                                        </a>
+                                    </li>
+
+                                    <li class="px-5 py-3 hover:bg-red-500 hover:text-white border-b-slate-300 border-b duration-300">
+                                        <a href="#" class="flex items-cente justify-between gap-3">
+
+                                            <svg class="w-6 h-6">
+                                                <use xlink:href="#bell"></use>
+                                            </svg>
+
+                                            <span>یک پیام جدید دارید</span>
+
+                                            <svg class="w-6 h-6">
+                                                <use xlink:href="#times"></use>
+                                            </svg>
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+
+                                <div class="px-5 py-2 text-red-500 hover:bg-red-500 hover:text-white duration-300">
+                                    <a href="#" class="flex items-center justify-center gap-3">
+
+                                        <span>مشاهده پیام ها</span>
+
+                                        <svg class="w-6 h-6">
+                                            <use xlink:href="#left"></use>
+                                        </svg>
+
+                                    </a>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="bell-icon relative flex bg-[#F2F4F6] text-[#616262] border border-input p-1 rounded-md cursor-pointer hover:bg-[#dddddd93] duration-300 z-50">
+
+                            <svg class="w-6 h-6">
+                                <use xlink:href="#comments"></use>
+                            </svg>
+
+                            <span class="absolute bg-yellow-400 rounded-full top-0 right-0 p-0.5 px-1 pt-1 text-[0.6rem] leading-none">4</span>
+
+                            <div class="show-bell-icon hidden absolute bg-white border-input rounded-md border top-10 left-0 overflow-hidden min-w-[280px] max-w-lg">
+
+                                <ul class="flex flex-col">
+
+                                    <li class="px-5 py-3 hover:bg-yellow-400 hover:text-white border-b-slate-300 border-b duration-300">
+                                        <a href="#" class="flex items-cente justify-between gap-3">
+
+                                            <svg class="w-6 h-6">
+                                                <use xlink:href="#bell"></use>
+                                            </svg>
+
+                                            <span>یک پیام جدید دارید</span>
+
+                                            <svg class="w-6 h-6">
+                                                <use xlink:href="#times"></use>
+                                            </svg>
+
+                                        </a>
+                                    </li>
+
+                                    <li class="px-5 py-3 hover:bg-yellow-400 hover:text-white border-b-slate-300 border-b duration-300">
+                                        <a href="#" class="flex items-cente justify-between gap-3">
+
+                                            <svg class="w-6 h-6">
+                                                <use xlink:href="#bell"></use>
+                                            </svg>
+
+                                            <span>یک پیام جدید دارید</span>
+
+                                            <svg class="w-6 h-6">
+                                                <use xlink:href="#times"></use>
+                                            </svg>
+
+                                        </a>
+                                    </li>
+
+                                    <li class="px-5 py-3 hover:bg-yellow-400 hover:text-white border-b-slate-300 border-b duration-300">
+                                        <a href="#" class="flex items-cente justify-between gap-3">
+
+                                            <svg class="w-6 h-6">
+                                                <use xlink:href="#bell"></use>
+                                            </svg>
+
+                                            <span>یک پیام جدید دارید</span>
+
+                                            <svg class="w-6 h-6">
+                                                <use xlink:href="#times"></use>
+                                            </svg>
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+
+                                <div class="px-5 py-2 text-yellow-400 hover:bg-yellow-400 hover:text-white duration-300">
+                                    <a href="#" class="flex items-center justify-center gap-3">
+
+                                        <span>مشاهده پیام ها</span>
+
+                                        <svg class="w-6 h-6">
+                                            <use xlink:href="#left"></use>
+                                        </svg>
+
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
 
             </header>
 
             <!-- Dedicated header for the "Add Product" page -->
-            <header class="flex flex-wrap gap-4 items-center justify-center sm:justify-between bg-white py-2 px-4 text-xs md:text-sm lg:text">
+            <header class="flex flex-wrap gap-4 items-center justify-center sm:justify-between bg-white py-2 px-5 text-xs md:text-sm lg:text">
 
                 <!-- publish Time -->
                 <div class="hidden sm:flex sm:flex-wrap sm:gap-1">
@@ -760,6 +932,8 @@
     <script src="../public/js/script.js"></script>
     <!-- tag input library -->
     <script src="../library/tag-input/tagInput.js"></script>
+
+
 </body>
 
 </html>
