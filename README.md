@@ -1,7 +1,10 @@
 ### Priview ( video )
 
+<div align="center">
+
 ![](public/images/preview.gif)
 
+</div>
 
 [Priview Online](https://peymanath.github.io/adminpanel/src/index.html)
 
